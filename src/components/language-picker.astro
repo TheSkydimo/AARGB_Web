@@ -1,23 +1,110 @@
 ---
+import { Icon } from "astro-icon/components";
 import { languages } from "~/i18n/ui";
 import type { Lang } from "~/i18n/ui";
-import { getLangFromUrl, getRouteFromUrl, useTranslatedPath } from "~/i18n/utils";
+import {
+  getLangFromUrl,
+  getRouteFromUrl,
+  useTranslatedPath,
+  useTranslations,
+} from "~/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const route = getRouteFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
+const t = useTranslations(lang);
+
+const currentLabel = languages[lang];
 ---
 
-<ul class="flex items-center gap-3">
-  {
-    Object.entries(languages).map(([code, label]) => (
-      <li>
-        <a class="text-sm" href={translatePath(route, code as Lang)}>
-          {label}
-        </a>
-      </li>
-    ))
+<details class="lang-picker">
+  <summary class="btn inline-flex items-center gap-2 text-sm">
+    <span class="sr-only">{t("nav.language")}</span>
+    <Icon name="mdi:earth" class="size-4 opacity-80" aria-hidden="true" />
+    <span aria-hidden="true">{currentLabel}</span>
+    <svg
+      class="chevron size-4"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.17l3.71-3.94a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  </summary>
+
+  <ul class="lang-menu" role="list">
+    {
+      Object.entries(languages).map(([code, label]) => {
+        const isCurrent = code === lang;
+        return (
+          <li>
+            {isCurrent ? (
+              <span class="lang-item lang-item--current" aria-current="true">
+                {label}
+              </span>
+            ) : (
+              <a class="lang-item" href={translatePath(route, code as Lang)}>
+                {label}
+              </a>
+            )}
+          </li>
+        );
+      })
+    }
+  </ul>
+</details>
+
+<style>
+  .lang-picker {
+    @apply relative;
   }
-</ul>
+
+  .lang-picker > summary {
+    @apply list-none;
+  }
+
+  .lang-picker > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .lang-picker[open] .chevron {
+    transform: rotate(180deg);
+  }
+
+  .chevron {
+    @apply transition-transform duration-200;
+  }
+
+  /* Desktop: floating dropdown */
+  .lang-menu {
+    @apply absolute right-0 mt-2 min-w-40 overflow-hidden rounded-lg border border-default bg-default shadow-lg;
+    @apply flex flex-col py-1;
+  }
+
+  .lang-item {
+    @apply block px-3 py-2 text-sm text-default;
+    @apply hover:bg-offset;
+  }
+
+  .lang-item--current {
+    @apply text-offset;
+  }
+
+  /* Mobile (menu modal): expand inline instead of floating */
+  @media (max-width: 639px) {
+    .lang-menu {
+      @apply static mt-3 min-w-0 w-full rounded-none border-0 bg-transparent shadow-none;
+      @apply gap-1 py-0;
+    }
+
+    .lang-item {
+      @apply px-0 py-2 text-center text-xl;
+    }
+  }
+</style>
 
 
