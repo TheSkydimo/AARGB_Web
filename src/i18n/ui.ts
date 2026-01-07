@@ -303,6 +303,40 @@ export const ui = {
       "Система управления атмосферной подсветкой ПК: официальный софт и контроллер для единого управления эффектами, например синхронизация с экраном, музыка, динамические эффекты и однотонный режим.",
     "home.hero.cta.download": "Скачать ПО",
     "home.hero.cta.features": "Особенности",
+
+    "home.download.heading": "Скачать ПО",
+    "home.download.lead":
+      "Выберите версию официального ПО AARGB для управления ARGB‑подсветкой: синхронизация с экраном, музыка, динамические эффекты и статический цвет.",
+    "home.download.versionLabel": "Версия:",
+    "home.download.cta": "Скачать",
+    "home.download.more": "Другие версии",
+    "home.download.menu.aria": "Другие варианты загрузки",
+    "home.download.menu.primary": "Прямая загрузка",
+    "home.download.menu.more": "Перейти на страницу загрузок",
+
+    "home.download.cards.winClassic.title": "Windows Classic",
+    "home.download.cards.winClassic.os": "Для Windows 8+.",
+    "home.download.cards.winClassic.b1": "Установите и пользуйтесь сразу. Простой и понятный интерфейс.",
+    "home.download.cards.winClassic.b2": "Базовая компоновка и управление.",
+    "home.download.cards.winClassic.b3": "Синхронизация с экраном и музыкой.",
+    "home.download.cards.winClassic.b4": "Повседневные атмосферные эффекты подсветки.",
+
+    "home.download.cards.winRecommended.title": "Windows Recommended",
+    "home.download.cards.winRecommended.badge": "NEW",
+    "home.download.cards.winRecommended.os": "Для Windows 10+.",
+    "home.download.cards.winRecommended.b1": "Единое управление подсветкой разных брендов.",
+    "home.download.cards.winRecommended.b2": "Управление тысячами устройств в одном месте.",
+    "home.download.cards.winRecommended.b3":
+      "Пиксельное сопоставление раскладки светодиодов для высокоточной синхронизации с экраном.",
+    "home.download.cards.winRecommended.b4": "ИИ создаёт персонализированные эффекты подсветки.",
+    "home.download.cards.winRecommended.b5": "Постоянные обновления и расширяющаяся экосистема.",
+    "home.download.cards.winRecommended.b6": "Часть функций построена на OpenRGB (GPL-2.0).",
+
+    "home.download.cards.macos.title": "macOS",
+    "home.download.cards.macos.os": "Для macOS 10.13+.",
+    "home.download.cards.macos.b1": "Классический стабильный релиз.",
+    "home.download.cards.macos.b2": "Просто и в стиле macOS.",
+    "home.download.cards.macos.b3": "Отлично подходит для повседневного атмосферного освещения.",
     "common.highlights.easy.title": "Простая установка",
     "common.highlights.easy.desc":
       "Подключите контроллер к ПК по USB, установите официальное ПО — и можно настраивать и пользоваться.",
@@ -412,6 +446,40 @@ export const ui = {
       "Resmi yazılım ve denetleyici ile PC ambiyans aydınlatma efektlerini tek yerden yönetin; ör. ekran senkronu, müzik, dinamik efektler ve tek renk modu.",
     "home.hero.cta.download": "Yazılımı indir",
     "home.hero.cta.features": "Özellikleri keşfet",
+
+    "home.download.heading": "Yazılımı indir",
+    "home.download.lead":
+      "Resmi AARGB kontrol yazılımının sürümünü seçin: ekran senkronu, müzik tepkili, dinamik efektler ve tek renk modu.",
+    "home.download.versionLabel": "Sürüm:",
+    "home.download.cta": "Şimdi indir",
+    "home.download.more": "Diğer sürümler",
+    "home.download.menu.aria": "Diğer indirme seçenekleri",
+    "home.download.menu.primary": "Doğrudan indir",
+    "home.download.menu.more": "İndirme sayfasına git",
+
+    "home.download.cards.winClassic.title": "Windows Classic",
+    "home.download.cards.winClassic.os": "Windows 8+ için.",
+    "home.download.cards.winClassic.b1": "Hemen kur ve kullan. Temiz, basit arayüz.",
+    "home.download.cards.winClassic.b2": "Temel düzen ve kontrol.",
+    "home.download.cards.winClassic.b3": "Ekran senkronu ve müzik senkronu.",
+    "home.download.cards.winClassic.b4": "Günlük ambiyans aydınlatma efektleri.",
+
+    "home.download.cards.winRecommended.title": "Windows Recommended",
+    "home.download.cards.winRecommended.badge": "NEW",
+    "home.download.cards.winRecommended.os": "Windows 10+ için.",
+    "home.download.cards.winRecommended.b1": "Markalar arası tek noktadan aydınlatma kontrolü.",
+    "home.download.cards.winRecommended.b2": "Binlerce cihaz için birleşik yönetim.",
+    "home.download.cards.winRecommended.b3":
+      "Yüksek hassasiyetli ekran senkronu için piksel düzeyi LED yerleşim eşlemesi.",
+    "home.download.cards.winRecommended.b4": "AI kişiselleştirilmiş aydınlatma efektleri üretir.",
+    "home.download.cards.winRecommended.b5": "Sürekli güncellenen ve büyüyen ekosistem.",
+    "home.download.cards.winRecommended.b6": "Bazı özellikler OpenRGB (GPL-2.0) üzerine kuruludur.",
+
+    "home.download.cards.macos.title": "macOS",
+    "home.download.cards.macos.os": "macOS 10.13+ için.",
+    "home.download.cards.macos.b1": "Klasik, kararlı sürüm.",
+    "home.download.cards.macos.b2": "Basit ve macOS ile uyumlu.",
+    "home.download.cards.macos.b3": "Günlük ambiyans aydınlatması için ideal.",
     "common.highlights.easy.title": "Kolay kurulum",
     "common.highlights.easy.desc":
       "Denetleyiciyi USB ile PC’ye bağlayın, resmi yazılımı yükleyin ve kullanıma başlayın.",

@@ -18,7 +18,7 @@ const currentLabel = languages[lang];
 ---
 
 <details class="lang-picker">
-  <summary class="btn inline-flex items-center gap-2 text-sm">
+  <summary class="btn inline-flex items-center gap-2 text-base">
     <span class="sr-only">{t("nav.language")}</span>
     <Icon name="mdi:earth" class="size-4 opacity-80" aria-hidden="true" />
     <span aria-hidden="true">{currentLabel}</span>
@@ -100,7 +100,7 @@ const currentLabel = languages[lang];
   }
 
   .lang-item {
-    @apply block px-3 py-2 text-sm text-default;
+    @apply block px-3 py-2 text-base text-default;
     @apply hover:bg-offset;
   }
 
