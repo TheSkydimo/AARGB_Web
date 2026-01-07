@@ -4,7 +4,7 @@ import { defineConfig } from "astro/config";
 
 // https://skydimo.com/config
 export default defineConfig({
-  site: "https://astro-moon-landing.netlify.app/",
+  site: "https://AARGB.com",
   i18n: {
     defaultLocale: "zh",
     locales: ["zh", "en", "ru", "tr"],

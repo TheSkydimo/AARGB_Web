@@ -67,8 +67,10 @@ const image = new URL("social.jpg", site);
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
     <Header />
-    <main class="px-8 py-16">
-      <slot />
+    <main class="px-4 py-16 sm:px-8">
+      <div class="mx-auto w-full max-w-7xl">
+        <slot />
+      </div>
     </main>
     <Footer />
   </body>

@@ -6,12 +6,13 @@ const config = {
   ],
   overrides: [
     {
-      files: "*.astro",
+      files: "*.AARGB",
       options: {
-        parser: "astro",
+        parser: "AARGB",
       },
     },
   ],
 };
+
 
 export default config;

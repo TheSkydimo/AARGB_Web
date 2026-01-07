@@ -23,9 +23,11 @@ const navItems: Array<NavItem> = [
 >
   <div class="header-shell">
     <a class="brand hover:!text-default" href={translatePath("/")}>
-      <h1 class="sr-only">AARGB</h1>
-      <Icon name="logomark" class="size-10" />
-      <Icon name="wordmark" class="hidden h-4 sm:block" />
+      <span class="sr-only">AARGB</span>
+      <Icon name="logomark" class="size-10" aria-hidden="true" />
+      <span class="hidden text-sm font-semibold tracking-[0.25em] sm:block"
+        >AARGB</span
+      >
     </a>
 
     <div class="flex items-center gap-4 sm:gap-6">
@@ -159,7 +161,7 @@ const navItems: Array<NavItem> = [
   .nav-link {
     @apply transition-colors duration-200;
     @apply hover:text-secondary;
-    @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
     @apply text-sm text-default;
   }
 
