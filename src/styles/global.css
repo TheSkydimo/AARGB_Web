@@ -13,18 +13,9 @@ a,
 
 /* Shared "hero + glass cards" design language */
 .hero-shell {
-  @apply relative overflow-hidden rounded-3xl border border-default px-6 py-12 sm:px-12 sm:py-16;
-  background: radial-gradient(
-      1200px 500px at 50% 0%,
-      rgba(99, 102, 241, 0.25),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 420px at 80% 20%,
-      rgba(236, 72, 153, 0.18),
-      transparent 55%
-    ),
-    var(--color-background);
+  /* Keep spacing, remove the "boxed/glass" frame */
+  @apply relative px-6 py-12 sm:px-12 sm:py-16;
+  background: transparent;
 }
 
 .hero-glow {
@@ -46,9 +37,12 @@ a,
 }
 
 .glass-card {
-  @apply rounded-2xl border border-default p-6;
-  background: color-mix(in srgb, var(--color-background-offset) 82%, transparent);
-  backdrop-filter: blur(14px);
+  /* Remove the "glass card" box styling; keep spacing only */
+  @apply p-6;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .accent-line {
@@ -56,4 +50,104 @@ a,
   width: 56px;
   border-radius: 9999px;
   background: linear-gradient(90deg, #6366f1, #d946ef, #ec4899);
+}
+
+/* Global site background (ported from legacy aargb.com) */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(
+      1200px 520px at 50% 0%,
+      rgba(99, 102, 241, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 480px at 80% 20%,
+      rgba(236, 72, 153, 0.14),
+      transparent 55%
+    ),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.72)),
+    url("/images/aargb-legacy-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(1.15) contrast(1.05);
+}
+
+/* Home: download cards */
+.download-card {
+  @apply relative overflow-hidden rounded-2xl border border-default bg-black/20 p-6;
+  @apply backdrop-blur-md;
+  @apply flex flex-col;
+}
+
+.download-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    520px 260px at 20% 20%,
+    rgba(99, 102, 241, 0.16),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.download-card__icon {
+  @apply h-10 w-10 rounded-full;
+  background: radial-gradient(circle at 30% 30%, rgba(217, 70, 239, 0.35), rgba(0, 0, 0, 0));
+}
+
+.download-card__title {
+  @apply text-lg font-bold sm:text-xl;
+}
+
+.download-badge {
+  @apply rounded-full border border-default bg-black/25 px-2 py-0.5 text-xs font-semibold text-offset;
+}
+
+.download-bullet {
+  @apply flex items-start gap-2;
+}
+
+.download-dot {
+  @apply mt-2 inline-block h-1.5 w-1.5 flex-none rounded-full;
+  background: linear-gradient(90deg, #6366f1, #d946ef, #ec4899);
+}
+
+.download-split {
+  @apply inline-flex overflow-hidden rounded-full border border-default;
+}
+
+.download-btn {
+  @apply inline-flex items-center gap-2 bg-offset px-5 py-2.5 text-sm font-semibold;
+}
+
+.download-btn--disabled {
+  @apply pointer-events-none opacity-50;
+}
+
+.download-menu {
+  @apply relative;
+}
+
+.download-menu__toggle {
+  @apply inline-flex h-full items-center justify-center bg-offset px-3 py-2.5;
+  @apply cursor-pointer;
+}
+
+.download-menu__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.download-menu__list {
+  @apply absolute right-0 z-20 mt-2 w-48 overflow-hidden rounded-xl border border-default bg-black/80;
+  @apply backdrop-blur-md;
+}
+
+.download-menu__item {
+  @apply block px-4 py-2.5 text-sm text-default hover:bg-black/40 hover:text-secondary;
 }

@@ -1,13 +1,19 @@
 ---
 import BaseLayout from "~/layouts/base-layout.astro";
 import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+import { DOWNLOAD_TARGETS } from "~/config/downloads";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// TODO: Replace these URLs with real download links.
-const DOWNLOAD_NEW_URL = "#";
-const DOWNLOAD_LEGACY_URL = "#";
+const winRecommended = DOWNLOAD_TARGETS.find((x) => x.id === "win-recommended");
+const winClassic = DOWNLOAD_TARGETS.find((x) => x.id === "win-classic");
+
+const DOWNLOAD_NEW_URL: string = winRecommended?.options?.[0]?.url ?? "#";
+const DOWNLOAD_LEGACY_URL: string = winClassic?.options?.[0]?.url ?? "#";
+
+const isNewDownloadAvailable = DOWNLOAD_NEW_URL !== "#";
+const isLegacyDownloadAvailable = DOWNLOAD_LEGACY_URL !== "#";
 ---
 
 <BaseLayout
@@ -28,18 +34,26 @@ const DOWNLOAD_LEGACY_URL = "#";
       </p>
       <div class="flex flex-wrap justify-center gap-4 pt-2">
         <a
-          class="btn rounded-full border border-default bg-offset px-6 py-3 text-sm font-semibold"
-          href={DOWNLOAD_NEW_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          class:list={[
+            "btn rounded-full border border-default bg-offset px-6 py-3 text-sm font-semibold",
+            !isNewDownloadAvailable && "pointer-events-none opacity-50",
+          ]}
+          href={isNewDownloadAvailable ? DOWNLOAD_NEW_URL : undefined}
+          target={isNewDownloadAvailable ? "_blank" : undefined}
+          rel={isNewDownloadAvailable ? "noopener noreferrer" : undefined}
+          aria-disabled={!isNewDownloadAvailable}
         >
           {t("download.cta.new")}
         </a>
         <a
-          class="btn rounded-full border border-default px-6 py-3 text-sm font-semibold"
-          href={DOWNLOAD_LEGACY_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          class:list={[
+            "btn rounded-full border border-default px-6 py-3 text-sm font-semibold",
+            !isLegacyDownloadAvailable && "pointer-events-none opacity-50",
+          ]}
+          href={isLegacyDownloadAvailable ? DOWNLOAD_LEGACY_URL : undefined}
+          target={isLegacyDownloadAvailable ? "_blank" : undefined}
+          rel={isLegacyDownloadAvailable ? "noopener noreferrer" : undefined}
+          aria-disabled={!isLegacyDownloadAvailable}
         >
           {t("download.cta.legacy")}
         </a>

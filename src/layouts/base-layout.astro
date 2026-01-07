@@ -118,13 +118,16 @@ const image = new URL("images/LOGO.png", site);
   <body
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
-    <Header />
-    <main class="px-4 py-16 sm:px-8">
-      <div class="mx-auto w-full max-w-7xl">
-        <slot />
-      </div>
-    </main>
-    <Footer />
+    <div class="site-bg" aria-hidden="true"></div>
+    <div class="relative z-10">
+      <Header />
+      <main class="px-4 py-16 sm:px-8">
+        <div class="mx-auto w-full max-w-7xl">
+          <slot />
+        </div>
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
 

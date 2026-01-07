@@ -1,0 +1,149 @@
+---
+import { Icon } from "astro-icon/components";
+import { useTranslatedPath, useTranslations } from "~/i18n/utils";
+import type { Lang } from "~/i18n/ui";
+import { DOWNLOAD_TARGETS } from "~/config/downloads";
+
+type Props = {
+  lang: Lang;
+};
+
+const { lang } = Astro.props satisfies Props;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+function resolveUrl(url: string) {
+  if (url.startsWith("internal:")) {
+    return translatePath(url.slice("internal:".length));
+  }
+  return url;
+}
+
+function isAvailable(url: string) {
+  return Boolean(url) && url !== "#";
+}
+
+function isExternal(url: string) {
+  return /^https?:\/\//i.test(url);
+}
+---
+
+<section id="download" class="mt-14 sm:mt-16">
+  <header class="text-center">
+    <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl">
+      {t("home.download.heading")}
+    </h2>
+    <p class="mx-auto mt-4 max-w-5xl text-base text-offset sm:text-lg">
+      {t("home.download.lead")}
+    </p>
+  </header>
+
+  <div class="mt-10 mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
+    {
+      DOWNLOAD_TARGETS.filter((x) => x.id !== "macos").map((target) => {
+        const options = target.options
+          .map((o) => ({ ...o, href: resolveUrl(o.url) }))
+          .filter((o) => isAvailable(o.href));
+
+        const primary = options[0];
+        const hasMenu = options.length > 1;
+
+        const primaryHref = primary?.href;
+        const primaryExternal = primaryHref ? isExternal(primaryHref) : false;
+
+        return (
+          <article class="download-card">
+            <div class="flex items-start gap-4">
+              <img
+                src="/images/LOGO.png"
+                alt="AARGB"
+                class="download-card__icon"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="min-w-0">
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="download-card__title">{t(target.titleKey as any)}</h3>
+                  {target.badgeKey ? <span class="download-badge">{t(target.badgeKey as any)}</span> : null}
+                </div>
+                <p class="mt-1 text-xs text-offset">
+                  {t("home.download.versionLabel")}{" "}
+                  <span class="font-mono">{target.version}</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-5 flex-1">
+              <ul class="space-y-2 text-sm text-offset">
+                {target.bulletsKeys.map((k) => (
+                  <li class="download-bullet">
+                    <span class="download-dot" aria-hidden="true"></span>
+                    <span>{t(k as any)}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <p class="mt-4 text-xs text-offset">{t(target.osNoteKey as any)}</p>
+            </div>
+
+            <div class="mt-auto pt-6 flex items-center justify-center">
+              <div class="download-split">
+                <a
+                  class:list={[
+                    "btn download-btn",
+                    !primaryHref && "download-btn--disabled",
+                  ]}
+                  href={primaryHref}
+                  target={primaryHref && primaryExternal ? "_blank" : undefined}
+                  rel={primaryHref && primaryExternal ? "noopener noreferrer" : undefined}
+                  aria-disabled={!primaryHref}
+                >
+                  <Icon name="mdi:download" class="size-5" />
+                  <span>{t("home.download.cta")}</span>
+                </a>
+
+                {hasMenu ? (
+                  <details class="download-menu">
+                    <summary class="download-menu__toggle" aria-label={t("home.download.menu.aria")}>
+                      <Icon name="mdi:chevron-down" class="size-5" />
+                    </summary>
+                    <ul class="download-menu__list">
+                      {options.map((o) => {
+                        const href = o.href;
+                        const external = isExternal(href);
+                        return (
+                          <li>
+                            <a
+                              class="download-menu__item"
+                              href={href}
+                              target={external ? "_blank" : undefined}
+                              rel={external ? "noopener noreferrer" : undefined}
+                            >
+                              {t(o.labelKey as any)}
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </details>
+                ) : null}
+              </div>
+            </div>
+          </article>
+        );
+      })
+    }
+  </div>
+
+  <div class="mt-6 text-center">
+    <a
+      class="inline-flex items-center gap-1 text-sm text-offset hover:text-secondary"
+      href={translatePath("/download/")}
+    >
+      <span>{t("home.download.more")}</span>
+      <Icon name="mdi:chevron-right" class="size-5" />
+    </a>
+  </div>
+</section>
+
+

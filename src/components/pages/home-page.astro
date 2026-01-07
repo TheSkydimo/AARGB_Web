@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "~/layouts/base-layout.astro";
-import { getLangFromUrl, useTranslatedPath, useTranslations } from "~/i18n/utils";
+import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+import HomeDownloadSection from "~/components/home-download-section.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
 ---
 
 <BaseLayout
@@ -12,33 +12,7 @@ const translatePath = useTranslatedPath(lang);
   description={t("home.description")}
   lang={lang}
 >
-  <section class="hero-shell">
-    <div class="hero-glow" aria-hidden="true"></div>
-
-    <header class="space-y-6 text-center">
-      <h1 class="sr-only">{t("home.hero.title")}</h1>
-      <p class="gradient-text text-5xl font-extrabold tracking-tight sm:text-6xl" aria-hidden="true">
-        {t("home.hero.title")}
-      </p>
-      <p class="mx-auto max-w-3xl text-base text-offset sm:text-lg">
-        {t("home.hero.subtitle")}
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a
-          class="btn rounded-full border border-default bg-offset px-6 py-3 text-sm font-semibold"
-          href={translatePath("/download/")}
-        >
-          {t("home.hero.cta.download")}
-        </a>
-        <a
-          class="btn rounded-full border border-default px-6 py-3 text-sm font-semibold"
-          href={translatePath("/features/")}
-        >
-          {t("home.hero.cta.features")}
-        </a>
-      </div>
-    </header>
-  </section>
+  <HomeDownloadSection lang={lang} />
 </BaseLayout>
 
 
