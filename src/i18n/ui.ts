@@ -47,6 +47,16 @@ export const ui = {
     "products.deviceTypes.floorLamp": "落地灯",
     "products.deviceTypes.peripherals": "键盘、鼠标、鼠标垫",
     "products.deviceTypes.pcCase": "机箱风扇等 ARGB 设备",
+    "products.cards.monitorBacklight.title": "屏幕背光灯",
+    "products.cards.monitorBacklight.desc": "适用于显示器背部环境光，支持同屏/音乐/动态等灯效模式。",
+    "products.cards.deskLamp.title": "桌面氛围灯",
+    "products.cards.deskLamp.desc": "桌面范围补光与氛围灯效，适合游戏、观影与日常使用。",
+    "products.cards.floorLamp.title": "落地灯",
+    "products.cards.floorLamp.desc": "更大范围的环境光覆盖，适合房间角落或桌边布置。",
+    "products.cards.peripherals.title": "键鼠与外设",
+    "products.cards.peripherals.desc": "支持键盘、鼠标、鼠标垫等外设灯效的统一管理与同步。",
+    "products.cards.pcCase.title": "机箱 ARGB 设备",
+    "products.cards.pcCase.desc": "机箱风扇、灯带等 ARGB 设备的统一控制与效果联动。",
     "products.note": "所有设备均通过官方软件进行统一管理与配置。",
 
     "features.title": "特性 | AARGB",
@@ -138,6 +148,21 @@ export const ui = {
     "products.deviceTypes.floorLamp": "Floor lamp",
     "products.deviceTypes.peripherals": "Keyboard, mouse, mousepad",
     "products.deviceTypes.pcCase": "PC case fans and other ARGB devices",
+    "products.cards.monitorBacklight.title": "Monitor backlight",
+    "products.cards.monitorBacklight.desc":
+      "Ambient backlighting behind your display, with screen sync, music reactive, and dynamic modes.",
+    "products.cards.deskLamp.title": "Desk ambient lamp",
+    "products.cards.deskLamp.desc":
+      "A compact desk light for comfortable ambience while gaming, watching, or working.",
+    "products.cards.floorLamp.title": "Floor lamp",
+    "products.cards.floorLamp.desc":
+      "Wider ambient coverage for rooms—great for corners or beside your desk.",
+    "products.cards.peripherals.title": "Peripherals",
+    "products.cards.peripherals.desc":
+      "Unified control for keyboards, mice, and mousepads with synchronized effects.",
+    "products.cards.pcCase.title": "PC case ARGB devices",
+    "products.cards.pcCase.desc":
+      "Centralized control for case fans, light strips, and other ARGB hardware.",
     "products.note": "All devices are managed and configured through the official software.",
 
     "features.title": "Features | AARGB",
@@ -229,6 +254,21 @@ export const ui = {
     "products.deviceTypes.floorLamp": "Торшер",
     "products.deviceTypes.peripherals": "Клавиатура, мышь, коврик для мыши",
     "products.deviceTypes.pcCase": "Вентиляторы корпуса и другие ARGB-устройства",
+    "products.cards.monitorBacklight.title": "Подсветка монитора",
+    "products.cards.monitorBacklight.desc":
+      "Атмосферная подсветка за монитором с режимами синхронизации с экраном, музыкой и динамикой.",
+    "products.cards.deskLamp.title": "Настольная лампа",
+    "products.cards.deskLamp.desc":
+      "Компактное атмосферное освещение для игр, просмотра и повседневной работы.",
+    "products.cards.floorLamp.title": "Торшер",
+    "products.cards.floorLamp.desc":
+      "Более широкое покрытие света — удобно для углов комнаты или рядом со столом.",
+    "products.cards.peripherals.title": "Периферия",
+    "products.cards.peripherals.desc":
+      "Единое управление подсветкой клавиатуры, мыши и коврика с синхронизацией эффектов.",
+    "products.cards.pcCase.title": "ARGB устройства в корпусе",
+    "products.cards.pcCase.desc":
+      "Централизованное управление вентиляторами, лентами и другим ARGB‑железом.",
     "products.note": "Все устройства управляются и настраиваются через официальное ПО.",
 
     "features.title": "Особенности | AARGB",
@@ -321,6 +361,21 @@ export const ui = {
     "products.deviceTypes.floorLamp": "Yer lambası",
     "products.deviceTypes.peripherals": "Klavye, mouse, mousepad",
     "products.deviceTypes.pcCase": "Kasa fanları ve diğer ARGB cihazlar",
+    "products.cards.monitorBacklight.title": "Monitör arka aydınlatması",
+    "products.cards.monitorBacklight.desc":
+      "Ekran arkası ambiyans ışığı; ekran senkronu, müzik tepkili ve dinamik modlar.",
+    "products.cards.deskLamp.title": "Masa ambiyans lambası",
+    "products.cards.deskLamp.desc":
+      "Oyun, izleme ve çalışma için kompakt masa üstü ambiyans aydınlatması.",
+    "products.cards.floorLamp.title": "Yer lambası",
+    "products.cards.floorLamp.desc":
+      "Oda genelinde daha geniş ambiyans kapsaması; köşeler ve masa yanı için ideal.",
+    "products.cards.peripherals.title": "Çevre birimleri",
+    "products.cards.peripherals.desc":
+      "Klavye, mouse ve mousepad için birleşik kontrol ve senkron efektler.",
+    "products.cards.pcCase.title": "Kasa ARGB cihazları",
+    "products.cards.pcCase.desc":
+      "Kasa fanları, LED şeritler ve diğer ARGB donanımlar için merkezi kontrol.",
     "products.note": "Tüm cihazlar resmi yazılım üzerinden tek merkezden yönetilir ve yapılandırılır.",
 
     "features.title": "Özellikler | AARGB",
