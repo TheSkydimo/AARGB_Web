@@ -11,28 +11,41 @@ const t = useTranslations(lang);
   description={t("products.description")}
   lang={lang}
 >
-  <div class="space-y-10">
-    <header class="space-y-4">
-      <h1 class="text-3xl font-extrabold tracking-tight sm:text-5xl">
+  <section class="hero-shell">
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <header class="space-y-6 text-center">
+      <h1 class="sr-only">{t("products.heading")}</h1>
+      <p class="gradient-text text-5xl font-extrabold tracking-tight sm:text-6xl" aria-hidden="true">
         {t("products.heading")}
-      </h1>
-      <p class="max-w-2xl text-offset">{t("products.lead")}</p>
+      </p>
+      <p class="mx-auto max-w-3xl text-base text-offset sm:text-lg">
+        {t("products.lead")}
+      </p>
     </header>
 
-    <section class="space-y-4">
-      <h2 class="text-xl font-bold sm:text-2xl">
-        {t("products.deviceTypes.title")}
-      </h2>
-      <ul class="list-disc space-y-2 pl-6 text-offset">
-        <li>{t("products.deviceTypes.monitorBacklight")}</li>
-        <li>{t("products.deviceTypes.deskLamp")}</li>
-        <li>{t("products.deviceTypes.floorLamp")}</li>
-        <li>{t("products.deviceTypes.peripherals")}</li>
-        <li>{t("products.deviceTypes.pcCase")}</li>
-      </ul>
-      <p class="text-sm text-offset">{t("products.note")}</p>
+    <section class="mt-12 space-y-6">
+      <h2 class="sr-only">{t("products.deviceTypes.title")}</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        {[
+          t("products.deviceTypes.monitorBacklight"),
+          t("products.deviceTypes.deskLamp"),
+          t("products.deviceTypes.floorLamp"),
+          t("products.deviceTypes.peripherals"),
+          t("products.deviceTypes.pcCase"),
+        ].map((title) => (
+          <article class="glass-card">
+            <div class="accent-line" aria-hidden="true"></div>
+            <p class="mt-4 text-lg font-semibold">{title}</p>
+          </article>
+        ))}
+      </div>
+
+      <p class="mx-auto max-w-3xl text-center text-sm text-offset">
+        {t("products.note")}
+      </p>
     </section>
-  </div>
+  </section>
 </BaseLayout>
 
 

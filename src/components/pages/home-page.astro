@@ -12,15 +12,18 @@ const translatePath = useTranslatedPath(lang);
   description={t("home.description")}
   lang={lang}
 >
-  <div class="space-y-16">
-    <header class="space-y-6">
-      <h1 class="text-4xl font-extrabold tracking-tight sm:text-6xl">
+  <section class="hero-shell">
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <header class="space-y-6 text-center">
+      <h1 class="sr-only">{t("home.hero.title")}</h1>
+      <p class="gradient-text text-5xl font-extrabold tracking-tight sm:text-6xl" aria-hidden="true">
         {t("home.hero.title")}
-      </h1>
-      <p class="max-w-2xl text-lg text-offset sm:text-xl">
+      </p>
+      <p class="mx-auto max-w-3xl text-base text-offset sm:text-lg">
         {t("home.hero.subtitle")}
       </p>
-      <div class="flex flex-wrap items-center gap-4">
+      <div class="flex flex-wrap justify-center gap-4">
         <a
           class="btn rounded-full border border-default bg-offset px-6 py-3 text-sm font-semibold"
           href={translatePath("/download/")}
@@ -35,31 +38,7 @@ const translatePath = useTranslatedPath(lang);
         </a>
       </div>
     </header>
-
-    <section class="space-y-6">
-      <h2 class="text-2xl font-bold sm:text-3xl">{t("home.highlights.title")}</h2>
-      <div class="grid gap-6 md:grid-cols-3">
-        <div class="space-y-2 rounded-2xl border border-default bg-offset p-6">
-          <h3 class="text-lg font-semibold">{t("common.highlights.easy.title")}</h3>
-          <p class="text-sm text-offset">{t("common.highlights.easy.desc")}</p>
-        </div>
-        <div class="space-y-2 rounded-2xl border border-default bg-offset p-6">
-          <h3 class="text-lg font-semibold">
-            {t("common.highlights.devices.title")}
-          </h3>
-          <p class="text-sm text-offset">{t("common.highlights.devices.desc")}</p>
-        </div>
-        <div class="space-y-2 rounded-2xl border border-default bg-offset p-6">
-          <h3 class="text-lg font-semibold">
-            {t("common.highlights.lowResource.title")}
-          </h3>
-          <p class="text-sm text-offset">
-            {t("common.highlights.lowResource.desc")}
-          </p>
-        </div>
-      </div>
-    </section>
-  </div>
+  </section>
 </BaseLayout>
 
 

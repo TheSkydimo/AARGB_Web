@@ -11,28 +11,37 @@ const t = useTranslations(lang);
   description={t("download.description")}
   lang={lang}
 >
-  <div class="space-y-10">
-    <header class="space-y-4">
-      <h1 class="text-3xl font-extrabold tracking-tight sm:text-5xl">
+  <section class="hero-shell">
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <header class="space-y-6 text-center">
+      <h1 class="sr-only">{t("download.heading")}</h1>
+      <p class="gradient-text text-5xl font-extrabold tracking-tight sm:text-6xl" aria-hidden="true">
         {t("download.heading")}
-      </h1>
-      <p class="max-w-2xl text-offset">{t("download.lead")}</p>
+      </p>
+      <p class="mx-auto max-w-3xl text-base text-offset sm:text-lg">
+        {t("download.lead")}
+      </p>
     </header>
 
-    <section class="space-y-4 rounded-2xl border border-default bg-offset p-6">
-      <h2 class="text-xl font-bold sm:text-2xl">{t("download.contents.title")}</h2>
-      <ul class="list-disc space-y-2 pl-6 text-offset">
-        <li>{t("download.contents.b1")}</li>
-        <li>{t("download.contents.b2")}</li>
-        <li>{t("download.contents.b3")}</li>
-      </ul>
-    </section>
+    <section class="mt-12 grid gap-6 md:grid-cols-2">
+      <article class="glass-card space-y-4">
+        <div class="accent-line" aria-hidden="true"></div>
+        <h2 class="mt-4 text-xl font-bold sm:text-2xl">{t("download.contents.title")}</h2>
+        <ul class="list-disc space-y-2 pl-6 text-offset">
+          <li>{t("download.contents.b1")}</li>
+          <li>{t("download.contents.b2")}</li>
+          <li>{t("download.contents.b3")}</li>
+        </ul>
+      </article>
 
-    <section class="space-y-3 rounded-2xl border border-default bg-offset p-6">
-      <h2 class="text-xl font-bold sm:text-2xl">{t("download.tips.title")}</h2>
-      <p class="text-offset">{t("download.tips.text")}</p>
+      <article class="glass-card space-y-3">
+        <div class="accent-line" aria-hidden="true"></div>
+        <h2 class="mt-4 text-xl font-bold sm:text-2xl">{t("download.tips.title")}</h2>
+        <p class="text-offset">{t("download.tips.text")}</p>
+      </article>
     </section>
-  </div>
+  </section>
 </BaseLayout>
 
 

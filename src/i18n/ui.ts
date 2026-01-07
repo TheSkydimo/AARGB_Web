@@ -1,4 +1,4 @@
-export const defaultLang = "zh" as const;
+export const defaultLang = "en" as const;
 
 export const languages = {
   zh: "中文",
@@ -20,12 +20,13 @@ export const ui = {
     "nav.language": "语言",
 
     "home.title": "AARGB | 桌面氛围灯光控制系统",
-    "home.description": "AARGB 官方桌面 ARGB 氛围灯光控制系统官网，提供产品信息、特性介绍与官方下载入口。",
+    "home.description":
+      "AARGB 官方电脑周边氛围灯光控制系统官网：产品介绍、特性说明与官方软件下载。",
     "home.hero.title": "AARGB 桌面氛围灯光控制系统",
-    "home.hero.subtitle": "通过官方控制软件，统一管理你的 ARGB 灯光设备",
+    "home.hero.subtitle":
+      "一套电脑周边氛围灯光控制系统，通过官方软件与控制器统一管理灯光效果，例如同屏模式、音乐模式、动态灯效与单色模式等。",
     "home.hero.cta.download": "下载软件",
     "home.hero.cta.features": "了解特性",
-    "home.highlights.title": "核心特性",
     "common.highlights.easy.title": "安装简单",
     "common.highlights.easy.desc":
       "通过 USB 将控制器连接至电脑，安装官方控制软件后即可完成配置与使用。",
@@ -98,7 +99,6 @@ export const ui = {
     "about.p2":
       "我们致力于通过稳定的软件与硬件方案，为用户提供可靠、易用的桌面灯光体验，让灯光成为桌面环境的一部分。",
 
-    "placeholder.title": "占位页 | AARGB",
   },
   en: {
     "site.name": "AARGB",
@@ -111,13 +111,12 @@ export const ui = {
 
     "home.title": "AARGB | Desktop Ambient Lighting Control",
     "home.description":
-      "Official website for the AARGB desktop ARGB ambient lighting system: product info, features, and official downloads.",
+      "Official website for the AARGB PC ambient lighting control system: product info, features, and official downloads.",
     "home.hero.title": "AARGB Desktop Ambient Lighting Control System",
     "home.hero.subtitle":
-      "Manage your ARGB lighting devices in one place with the official control software.",
+      "A PC ambient lighting control system managed by the official app and controller, with modes like screen sync, music reactive, dynamic effects, and solid color.",
     "home.hero.cta.download": "Download software",
     "home.hero.cta.features": "Explore features",
-    "home.highlights.title": "Key features",
     "common.highlights.easy.title": "Easy setup",
     "common.highlights.easy.desc":
       "Connect the controller to your PC via USB, install the official software, and you’re ready to configure and use it.",
@@ -191,7 +190,6 @@ export const ui = {
     "about.p2":
       "We aim to deliver reliable and easy-to-use desktop lighting experiences through stable software and hardware solutions—making light a natural part of your setup.",
 
-    "placeholder.title": "Placeholder | AARGB",
   },
   ru: {
     "site.name": "AARGB",
@@ -204,13 +202,12 @@ export const ui = {
 
     "home.title": "AARGB | Управление атмосферной подсветкой",
     "home.description":
-      "Официальный сайт AARGB: информация о продуктах, возможностях и официальные загрузки ПО для ARGB-подсветки.",
+      "Официальный сайт AARGB: описание продукта, возможности и официальная загрузка ПО для атмосферной подсветки ПК.",
     "home.hero.title": "Система управления атмосферной подсветкой AARGB",
     "home.hero.subtitle":
-      "Управляйте устройствами ARGB в одном месте с помощью официального программного обеспечения.",
+      "Система управления атмосферной подсветкой ПК: официальный софт и контроллер для единого управления эффектами, например синхронизация с экраном, музыка, динамические эффекты и однотонный режим.",
     "home.hero.cta.download": "Скачать ПО",
     "home.hero.cta.features": "Особенности",
-    "home.highlights.title": "Ключевые особенности",
     "common.highlights.easy.title": "Простая установка",
     "common.highlights.easy.desc":
       "Подключите контроллер к ПК по USB, установите официальное ПО — и можно настраивать и пользоваться.",
@@ -285,7 +282,6 @@ export const ui = {
     "about.p2":
       "Мы стремимся обеспечивать надёжный и удобный опыт настольной подсветки благодаря стабильным программным и аппаратным решениям — чтобы свет стал частью вашего рабочего пространства.",
 
-    "placeholder.title": "Страница-заглушка | AARGB",
   },
   tr: {
     "site.name": "AARGB",
@@ -298,13 +294,12 @@ export const ui = {
 
     "home.title": "AARGB | Masaüstü Ambiyans Aydınlatma Kontrolü",
     "home.description":
-      "AARGB resmi sitesi: ürün bilgileri, özellikler ve ARGB ambiyans aydınlatma için resmi yazılım indirme sayfası.",
+      "AARGB resmi sitesi: ürün bilgileri, özellikler ve PC ambiyans aydınlatma kontrol yazılımı için resmi indirme.",
     "home.hero.title": "AARGB Masaüstü Ambiyans Aydınlatma Kontrol Sistemi",
     "home.hero.subtitle":
-      "Resmi kontrol yazılımı ile ARGB aydınlatma cihazlarınızı tek yerden yönetin.",
+      "Resmi yazılım ve denetleyici ile PC ambiyans aydınlatma efektlerini tek yerden yönetin; ör. ekran senkronu, müzik, dinamik efektler ve tek renk modu.",
     "home.hero.cta.download": "Yazılımı indir",
     "home.hero.cta.features": "Özellikleri keşfet",
-    "home.highlights.title": "Öne çıkan özellikler",
     "common.highlights.easy.title": "Kolay kurulum",
     "common.highlights.easy.desc":
       "Denetleyiciyi USB ile PC’ye bağlayın, resmi yazılımı yükleyin ve kullanıma başlayın.",
@@ -380,7 +375,6 @@ export const ui = {
     "about.p2":
       "Kararlı yazılım ve donanım çözümleriyle güvenilir ve kolay bir masaüstü aydınlatma deneyimi sunmayı hedefliyoruz; ışığın kurulumunuzun doğal bir parçası olmasını sağlıyoruz.",
 
-    "placeholder.title": "Yer tutucu | AARGB",
   },
 } as const;
 

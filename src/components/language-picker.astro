@@ -47,7 +47,11 @@ const currentLabel = languages[lang];
                 {label}
               </span>
             ) : (
-              <a class="lang-item" href={translatePath(route, code as Lang)}>
+              <a
+                class="lang-item"
+                href={translatePath(route, code as Lang)}
+                data-lang={code}
+              >
                 {label}
               </a>
             )}
@@ -57,6 +61,16 @@ const currentLabel = languages[lang];
     }
   </ul>
 </details>
+
+<script>
+  // Remember user-selected language for future visits to non-prefixed routes (e.g. "/products/").
+  document.querySelectorAll(".lang-menu a.lang-item").forEach((a) => {
+    a.addEventListener("click", () => {
+      const lang = (a as HTMLAnchorElement).dataset.lang;
+      if (lang) localStorage.setItem("lang", lang);
+    });
+  });
+</script>
 
 <style>
   .lang-picker {

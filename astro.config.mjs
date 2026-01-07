@@ -6,7 +6,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://AARGB.com",
   i18n: {
-    defaultLocale: "zh",
+    defaultLocale: "en",
     locales: ["zh", "en", "ru", "tr"],
     routing: {
       prefixDefaultLocale: false,

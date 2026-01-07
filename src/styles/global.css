@@ -10,3 +10,50 @@ a,
   @apply bg-clip-text text-transparent;
   @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
 }
+
+/* Shared "hero + glass cards" design language */
+.hero-shell {
+  @apply relative overflow-hidden rounded-3xl border border-default px-6 py-12 sm:px-12 sm:py-16;
+  background: radial-gradient(
+      1200px 500px at 50% 0%,
+      rgba(99, 102, 241, 0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 420px at 80% 20%,
+      rgba(236, 72, 153, 0.18),
+      transparent 55%
+    ),
+    var(--color-background);
+}
+
+.hero-glow {
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+      600px 300px at 35% 30%,
+      rgba(99, 102, 241, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      520px 260px at 70% 45%,
+      rgba(217, 70, 239, 0.18),
+      transparent 60%
+    );
+  filter: blur(30px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.glass-card {
+  @apply rounded-2xl border border-default p-6;
+  background: color-mix(in srgb, var(--color-background-offset) 82%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.accent-line {
+  height: 3px;
+  width: 56px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #6366f1, #d946ef, #ec4899);
+}
