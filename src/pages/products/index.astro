@@ -1,0 +1,13 @@
+---
+import BaseLayout from "~/layouts/base-layout.astro";
+import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t("products.title")} lang={lang}>
+  <h2 class="text-2xl font-bold">{t("products.heading")}</h2>
+</BaseLayout>
+
+

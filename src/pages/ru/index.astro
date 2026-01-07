@@ -1,0 +1,22 @@
+---
+import BaseLayout from "~/layouts/base-layout.astro";
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<BaseLayout title={t("home.title")} lang={lang}>
+  <section class="space-y-6">
+    <h2 class="text-3xl font-bold">{t("home.heading")}</h2>
+    <p class="max-w-prose opacity-90">{t("home.subheading")}</p>
+    <div class="flex items-center gap-4">
+      <a class="btn" href={translatePath("/products/")}>
+        {t("home.cta.products")}
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+
