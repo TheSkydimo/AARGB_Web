@@ -73,7 +73,30 @@ const image = new URL("social.jpg", site);
         localStorage.setItem("lang", currentLang);
       }
 
-      const preferred = localStorage.getItem("lang");
+      const detectBrowserLocale = () => {
+        const langs = Array.isArray(navigator.languages) && navigator.languages.length
+          ? navigator.languages
+          : [navigator.language].filter(Boolean);
+
+        for (const raw of langs) {
+          const l = String(raw).toLowerCase();
+          if (l.startsWith("zh")) return "zh";
+          if (l.startsWith("ru")) return "ru";
+          if (l.startsWith("tr")) return "tr";
+          if (l.startsWith("en")) return "en";
+        }
+        return DEFAULT_LOCALE;
+      };
+
+      let preferred = localStorage.getItem("lang");
+      if (!preferred || !LOCALES.includes(preferred)) {
+        preferred = detectBrowserLocale();
+        // Only persist non-default; default behavior stays English.
+        if (preferred && preferred !== DEFAULT_LOCALE) {
+          localStorage.setItem("lang", preferred);
+        }
+      }
+
       if (preferred && LOCALES.includes(preferred) && preferred !== DEFAULT_LOCALE) {
         const pathname = window.location.pathname;
         const segments = pathname.split("/").filter(Boolean);
