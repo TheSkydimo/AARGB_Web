@@ -17,7 +17,7 @@ const {
 } = Astro.props satisfies Props;
 
 const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
+const image = new URL("images/LOGO.png", site);
 ---
 
 <!doctype html>
@@ -25,7 +25,7 @@ const image = new URL("social.jpg", site);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/images/LOGO.png" type="image/png" />
     <meta name="generator" content={generator} />
 
     <title>{title}</title>

@@ -4,6 +4,10 @@ import { getLangFromUrl, useTranslations } from "~/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+// TODO: Replace these URLs with real download links.
+const DOWNLOAD_NEW_URL = "#";
+const DOWNLOAD_LEGACY_URL = "#";
 ---
 
 <BaseLayout
@@ -22,6 +26,24 @@ const t = useTranslations(lang);
       <p class="mx-auto max-w-3xl text-base text-offset sm:text-lg">
         {t("download.lead")}
       </p>
+      <div class="flex flex-wrap justify-center gap-4 pt-2">
+        <a
+          class="btn rounded-full border border-default bg-offset px-6 py-3 text-sm font-semibold"
+          href={DOWNLOAD_NEW_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t("download.cta.new")}
+        </a>
+        <a
+          class="btn rounded-full border border-default px-6 py-3 text-sm font-semibold"
+          href={DOWNLOAD_LEGACY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t("download.cta.legacy")}
+        </a>
+      </div>
     </header>
 
     <section class="mt-12 grid gap-6 md:grid-cols-2">

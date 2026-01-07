@@ -4,7 +4,14 @@ import ContentSection from "~/components/content-section.astro";
 ---
 
 <ContentSection title="Just ship less" id="intro">
-  <Icon slot="eyebrow" name="logomark" class="size-32" />
+  <img
+    slot="eyebrow"
+    src="/images/LOGO.png"
+    alt="AARGB"
+    class="h-32 w-auto"
+    loading="lazy"
+    decoding="async"
+  />
   <Fragment slot="lead">
     Astro is a new kind of site builder for the
     <span class="text-primary">modern</span> web.
