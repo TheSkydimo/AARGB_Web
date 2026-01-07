@@ -25,15 +25,15 @@ export const ui = {
     "home.hero.subtitle": "通过官方控制软件，统一管理你的 ARGB 灯光设备",
     "home.hero.cta.download": "下载软件",
     "home.hero.cta.features": "了解特性",
-    "home.overview.title": "我们的产品",
-    "home.overview.easy.title": "安装简单",
-    "home.overview.easy.desc":
+    "home.highlights.title": "核心特性",
+    "common.highlights.easy.title": "安装简单",
+    "common.highlights.easy.desc":
       "通过 USB 将控制器连接至电脑，安装官方控制软件后即可完成配置与使用。",
-    "home.overview.devices.title": "设备种类齐全",
-    "home.overview.devices.desc":
+    "common.highlights.devices.title": "设备种类齐全",
+    "common.highlights.devices.desc":
       "支持控制多种不同类型的灯光设备，包括屏幕背光灯、桌面灯、落地灯及其他 ARGB 外设。",
-    "home.overview.lowResource.title": "占用资源低",
-    "home.overview.lowResource.desc":
+    "common.highlights.lowResource.title": "占用资源低",
+    "common.highlights.lowResource.desc":
       "在多设备控制场景下，系统资源占用较低，不会影响电脑的正常使用。",
 
     "products.title": "产品 | AARGB",
@@ -51,6 +51,7 @@ export const ui = {
     "features.title": "特性 | AARGB",
     "features.description": "了解 AARGB 官方控制软件与多设备灯效能力。",
     "features.heading": "特性",
+    "features.highlights.title": "核心特性概览",
     "features.software.title": "官方控制软件",
     "features.software.desc":
       "AARGB 提供官方灯光控制软件，用于设备管理、灯效配置与系统稳定运行。",
@@ -72,7 +73,7 @@ export const ui = {
     "features.modes.i4": "基础灯效：单色与静态效果",
     "features.performance.title": "稳定性与资源占用",
     "features.performance.desc": "软件在设计时充分考虑系统稳定性与性能表现。",
-    "features.performance.b1": "在同时控制多个灯光设备的情况下，CPU 占用约为 1% 左右",
+    "features.performance.b1": "在同时控制多个灯光设备的情况下，CPU 占用较低",
     "features.performance.b2": "适合长时间运行",
     "features.performance.b3": "不影响系统正常使用",
 
@@ -116,15 +117,15 @@ export const ui = {
       "Manage your ARGB lighting devices in one place with the official control software.",
     "home.hero.cta.download": "Download software",
     "home.hero.cta.features": "Explore features",
-    "home.overview.title": "Our products",
-    "home.overview.easy.title": "Easy setup",
-    "home.overview.easy.desc":
+    "home.highlights.title": "Key features",
+    "common.highlights.easy.title": "Easy setup",
+    "common.highlights.easy.desc":
       "Connect the controller to your PC via USB, install the official software, and you’re ready to configure and use it.",
-    "home.overview.devices.title": "Wide device support",
-    "home.overview.devices.desc":
+    "common.highlights.devices.title": "Broad device support",
+    "common.highlights.devices.desc":
       "Supports various lighting devices, including monitor backlights, desk lamps, floor lamps, and other ARGB peripherals.",
-    "home.overview.lowResource.title": "Low resource usage",
-    "home.overview.lowResource.desc":
+    "common.highlights.lowResource.title": "Low resource usage",
+    "common.highlights.lowResource.desc":
       "Designed to keep system resource usage low even when controlling multiple devices.",
 
     "products.title": "Products | AARGB",
@@ -143,6 +144,7 @@ export const ui = {
     "features.title": "Features | AARGB",
     "features.description": "Official control software, multi-device control, modes, and stability.",
     "features.heading": "Features",
+    "features.highlights.title": "Key feature highlights",
     "features.software.title": "Official control software",
     "features.software.desc":
       "AARGB provides an official lighting control app for device management, effects configuration, and stable operation.",
@@ -164,7 +166,7 @@ export const ui = {
     "features.modes.i4": "Basic effects: solid color and static effects",
     "features.performance.title": "Stability and resource usage",
     "features.performance.desc": "Designed with system stability and performance in mind.",
-    "features.performance.b1": "CPU usage is around 1% when controlling multiple devices",
+    "features.performance.b1": "Low CPU usage even when controlling multiple devices",
     "features.performance.b2": "Suitable for long-running use",
     "features.performance.b3": "Does not interfere with normal system use",
 
@@ -208,15 +210,15 @@ export const ui = {
       "Управляйте устройствами ARGB в одном месте с помощью официального программного обеспечения.",
     "home.hero.cta.download": "Скачать ПО",
     "home.hero.cta.features": "Особенности",
-    "home.overview.title": "Наши продукты",
-    "home.overview.easy.title": "Простая установка",
-    "home.overview.easy.desc":
+    "home.highlights.title": "Ключевые особенности",
+    "common.highlights.easy.title": "Простая установка",
+    "common.highlights.easy.desc":
       "Подключите контроллер к ПК по USB, установите официальное ПО — и можно настраивать и пользоваться.",
-    "home.overview.devices.title": "Широкая поддержка устройств",
-    "home.overview.devices.desc":
+    "common.highlights.devices.title": "Широкая поддержка устройств",
+    "common.highlights.devices.desc":
       "Поддерживаются разные типы подсветки: подсветка монитора, настольные лампы, торшеры и другие ARGB-периферийные устройства.",
-    "home.overview.lowResource.title": "Низкая нагрузка",
-    "home.overview.lowResource.desc":
+    "common.highlights.lowResource.title": "Низкая нагрузка",
+    "common.highlights.lowResource.desc":
       "Низкое потребление ресурсов даже при управлении несколькими устройствами.",
 
     "products.title": "Продукты | AARGB",
@@ -235,6 +237,7 @@ export const ui = {
     "features.title": "Особенности | AARGB",
     "features.description": "Официальное ПО, синхронизация нескольких устройств, режимы и стабильность.",
     "features.heading": "Особенности",
+    "features.highlights.title": "Ключевые особенности — кратко",
     "features.software.title": "Официальное ПО управления",
     "features.software.desc":
       "AARGB предоставляет официальное приложение для управления устройствами, настройки эффектов и стабильной работы системы.",
@@ -257,8 +260,7 @@ export const ui = {
     "features.performance.title": "Стабильность и нагрузка",
     "features.performance.desc":
       "В проектировании уделено внимание стабильности системы и производительности.",
-    "features.performance.b1":
-      "При управлении несколькими устройствами загрузка CPU около 1%",
+    "features.performance.b1": "Низкая нагрузка на CPU даже при управлении несколькими устройствами",
     "features.performance.b2": "Подходит для длительной работы",
     "features.performance.b3": "Не мешает обычной работе системы",
 
@@ -302,15 +304,15 @@ export const ui = {
       "Resmi kontrol yazılımı ile ARGB aydınlatma cihazlarınızı tek yerden yönetin.",
     "home.hero.cta.download": "Yazılımı indir",
     "home.hero.cta.features": "Özellikleri keşfet",
-    "home.overview.title": "Ürünlerimiz",
-    "home.overview.easy.title": "Kolay kurulum",
-    "home.overview.easy.desc":
+    "home.highlights.title": "Öne çıkan özellikler",
+    "common.highlights.easy.title": "Kolay kurulum",
+    "common.highlights.easy.desc":
       "Denetleyiciyi USB ile PC’ye bağlayın, resmi yazılımı yükleyin ve kullanıma başlayın.",
-    "home.overview.devices.title": "Geniş cihaz desteği",
-    "home.overview.devices.desc":
+    "common.highlights.devices.title": "Geniş cihaz desteği",
+    "common.highlights.devices.desc":
       "Monitör arka aydınlatması, masa lambası, yer lambası ve diğer ARGB çevre birimleri dâhil çeşitli cihazları destekler.",
-    "home.overview.lowResource.title": "Düşük kaynak kullanımı",
-    "home.overview.lowResource.desc":
+    "common.highlights.lowResource.title": "Düşük kaynak kullanımı",
+    "common.highlights.lowResource.desc":
       "Birden fazla cihaz kontrol edilirken bile sistem kaynak kullanımını düşük tutacak şekilde tasarlanmıştır.",
 
     "products.title": "Ürünler | AARGB",
@@ -329,6 +331,7 @@ export const ui = {
     "features.title": "Özellikler | AARGB",
     "features.description": "Resmi kontrol yazılımı, çoklu cihaz yönetimi, modlar ve kararlılık.",
     "features.heading": "Özellikler",
+    "features.highlights.title": "Özellik özetleri",
     "features.software.title": "Resmi kontrol yazılımı",
     "features.software.desc":
       "AARGB, cihaz yönetimi, efekt ayarları ve kararlı çalışma için resmi kontrol yazılımı sunar.",
@@ -351,8 +354,7 @@ export const ui = {
     "features.performance.title": "Kararlılık ve kaynak kullanımı",
     "features.performance.desc":
       "Sistem kararlılığı ve performans göz önünde bulundurularak tasarlanmıştır.",
-    "features.performance.b1":
-      "Birden fazla cihaz kontrolünde CPU kullanımı yaklaşık %1’dir",
+    "features.performance.b1": "Birden fazla cihaz kontrolünde bile CPU kullanımı düşüktür",
     "features.performance.b2": "Uzun süreli çalışmaya uygundur",
     "features.performance.b3": "Sistemin normal kullanımını etkilemez",
 
