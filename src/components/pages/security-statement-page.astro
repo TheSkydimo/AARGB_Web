@@ -1,0 +1,75 @@
+---
+import BaseLayout from "~/layouts/base-layout.astro";
+import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t("security.title")} description={t("security.description")} lang={lang}>
+  <section class="hero-shell flex min-h-[calc(100vh-260px)] flex-col overflow-hidden">
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <header class="space-y-6 text-center">
+      <h1 class="sr-only">{t("security.heading")}</h1>
+      <p
+        class="gradient-text text-5xl font-extrabold tracking-tight sm:text-6xl"
+        aria-hidden="true"
+      >
+        {t("security.heading")}
+      </p>
+    </header>
+
+    <section class="mt-12 flex flex-1">
+      <article
+        class="glass-card w-full flex-1 overflow-hidden rounded-2xl border border-default bg-black/30 p-0 backdrop-blur-md"
+      >
+        <div class="space-y-4 p-6 sm:p-8">
+          <div class="accent-line" aria-hidden="true"></div>
+          <div class="space-y-6 text-offset">
+            <p>{t("security.intro")}</p>
+
+            <section class="space-y-3">
+              <h2 class="text-lg font-semibold text-default">{t("security.s1.title")}</h2>
+              <p>{t("security.s1.lead")}</p>
+              <ul class="list-disc space-y-2 pl-6">
+                <li>{t("security.s1.b1")}</li>
+                <li>{t("security.s1.b2")}</li>
+                <li>{t("security.s1.b3")}</li>
+              </ul>
+            </section>
+
+            <section class="space-y-3">
+              <h2 class="text-lg font-semibold text-default">{t("security.s2.title")}</h2>
+              <p>{t("security.s2.lead")}</p>
+              <ul class="list-disc space-y-2 pl-6">
+                <li>{t("security.s2.b1")}</li>
+                <li>{t("security.s2.b2")}</li>
+                <li>{t("security.s2.b3")}</li>
+              </ul>
+            </section>
+
+            <section class="space-y-3">
+              <h2 class="text-lg font-semibold text-default">{t("security.s3.title")}</h2>
+              <ul class="list-disc space-y-2 pl-6">
+                <li>{t("security.s3.b1")}</li>
+                <li>{t("security.s3.b2")}</li>
+              </ul>
+            </section>
+
+            <section class="space-y-3">
+              <h2 class="text-lg font-semibold text-default">{t("security.s4.title")}</h2>
+              <p>{t("security.s4.lead")}</p>
+              <ul class="list-disc space-y-2 pl-6">
+                <li>{t("security.s4.b1")}</li>
+                <li>{t("security.s4.b2")}</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </article>
+    </section>
+  </section>
+</BaseLayout>
+
+

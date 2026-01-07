@@ -1,0 +1,99 @@
+---
+import BaseLayout from "~/layouts/base-layout.astro";
+import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t("privacy.title")} description={t("privacy.description")} lang={lang}>
+  <section class="hero-shell flex min-h-[calc(100vh-260px)] flex-col overflow-hidden">
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <header class="space-y-6 text-center">
+      <h1 class="sr-only">{t("privacy.heading")}</h1>
+      <p
+        class="gradient-text text-5xl font-extrabold tracking-tight sm:text-6xl"
+        aria-hidden="true"
+      >
+        {t("privacy.heading")}
+      </p>
+    </header>
+
+    <section class="mt-12 flex flex-1">
+      <article
+        class="glass-card w-full flex-1 overflow-hidden rounded-2xl border border-default bg-black/30 p-0 backdrop-blur-md"
+      >
+        <div class="space-y-4 p-6 sm:p-8">
+          <div class="accent-line" aria-hidden="true"></div>
+          <div class="space-y-6 text-offset">
+            <p class="text-sm opacity-90">
+              <strong>{t("privacy.effectiveDateLabel")} </strong>{t("privacy.effectiveDateValue")}
+            </p>
+
+            <p>{t("privacy.intro")}</p>
+
+            <section class="space-y-3">
+              <h2 class="text-lg font-semibold text-default">{t("privacy.s1.title")}</h2>
+              <p>{t("privacy.s1.lead")}</p>
+              <ul class="list-disc space-y-2 pl-6">
+                <li><strong>{t("privacy.s1.b1.label")}</strong>{t("privacy.s1.b1.text")}</li>
+                <li><strong>{t("privacy.s1.b2.label")}</strong>{t("privacy.s1.b2.text")}</li>
+                <li><strong>{t("privacy.s1.b3.label")}</strong>{t("privacy.s1.b3.text")}</li>
+                <li><strong>{t("privacy.s1.b4.label")}</strong>{t("privacy.s1.b4.text")}</li>
+              </ul>
+              <p>{t("privacy.s1.note")}</p>
+            </section>
+
+            <section class="space-y-3">
+              <h2 class="text-lg font-semibold text-default">{t("privacy.s2.title")}</h2>
+              <p>{t("privacy.s2.lead")}</p>
+              <ul class="list-disc space-y-2 pl-6">
+                <li>{t("privacy.s2.b1")}</li>
+                <li>{t("privacy.s2.b2")}</li>
+                <li>{t("privacy.s2.b3")}</li>
+                <li>{t("privacy.s2.b4")}</li>
+              </ul>
+            </section>
+
+            <section class="space-y-3">
+              <h2 class="text-lg font-semibold text-default">{t("privacy.s3.title")}</h2>
+              <ul class="list-disc space-y-2 pl-6">
+                <li>{t("privacy.s3.b1")}</li>
+                <li>{t("privacy.s3.b2")}</li>
+                <li>{t("privacy.s3.b3")}</li>
+              </ul>
+            </section>
+
+            <section class="space-y-3">
+              <h2 class="text-lg font-semibold text-default">{t("privacy.s4.title")}</h2>
+              <p>{t("privacy.s4.lead")}</p>
+              <ul class="list-disc space-y-2 pl-6">
+                <li>{t("privacy.s4.b1")}</li>
+                <li>{t("privacy.s4.b2")}</li>
+                <li>{t("privacy.s4.b3")}</li>
+              </ul>
+            </section>
+
+            <section class="space-y-3">
+              <h2 class="text-lg font-semibold text-default">{t("privacy.s5.title")}</h2>
+              <p>{t("privacy.s5.lead")}</p>
+              <ul class="list-disc space-y-2 pl-6">
+                <li>{t("privacy.s5.b1")}</li>
+                <li>{t("privacy.s5.b2")}</li>
+                <li>{t("privacy.s5.b3")}</li>
+              </ul>
+            </section>
+
+            <section class="space-y-3">
+              <h2 class="text-lg font-semibold text-default">{t("privacy.s6.title")}</h2>
+              <p>{t("privacy.s6.body")}</p>
+            </section>
+          </div>
+        </div>
+      </article>
+    </section>
+  </section>
+</BaseLayout>
+
+

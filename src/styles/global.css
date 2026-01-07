@@ -16,7 +16,7 @@ a,
 /* Shared "hero + glass cards" design language */
 .hero-shell {
   /* Keep spacing, remove the "boxed/glass" frame */
-  @apply relative px-6 py-12 sm:px-12 sm:py-16;
+  @apply relative px-6 py-12 sm:px-12 sm:py-16 overflow-hidden;
   background: transparent;
 }
 
