@@ -1,13 +1,7 @@
 ---
-import BaseLayout from "~/layouts/base-layout.astro";
-import { getLangFromUrl, useTranslations } from "~/i18n/utils";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import AboutPage from "~/components/pages/about-page.astro";
 ---
 
-<BaseLayout title={t("about.title")} lang={lang}>
-  <h2 class="text-2xl font-bold">{t("about.heading")}</h2>
-</BaseLayout>
+<AboutPage />
 
 

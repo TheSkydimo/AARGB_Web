@@ -1,0 +1,25 @@
+---
+import BaseLayout from "~/layouts/base-layout.astro";
+import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t("about.title")} description={t("about.description")} lang={lang}>
+  <div class="space-y-10">
+    <header class="space-y-4">
+      <h1 class="text-3xl font-extrabold tracking-tight sm:text-5xl">
+        {t("about.heading")}
+      </h1>
+      <p class="max-w-2xl text-offset">{t("about.lead")}</p>
+    </header>
+
+    <section class="space-y-4 rounded-2xl border border-default bg-offset p-6">
+      <p class="text-offset">{t("about.p1")}</p>
+      <p class="text-offset">{t("about.p2")}</p>
+    </section>
+  </div>
+</BaseLayout>
+
+

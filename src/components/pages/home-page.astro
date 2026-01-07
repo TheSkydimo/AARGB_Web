@@ -1,0 +1,65 @@
+---
+import BaseLayout from "~/layouts/base-layout.astro";
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<BaseLayout
+  title={t("home.title")}
+  description={t("home.description")}
+  lang={lang}
+>
+  <div class="space-y-16">
+    <header class="space-y-6">
+      <h1 class="text-4xl font-extrabold tracking-tight sm:text-6xl">
+        {t("home.hero.title")}
+      </h1>
+      <p class="max-w-2xl text-lg text-offset sm:text-xl">
+        {t("home.hero.subtitle")}
+      </p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a
+          class="btn rounded-full border border-default bg-offset px-6 py-3 text-sm font-semibold"
+          href={translatePath("/download/")}
+        >
+          {t("home.hero.cta.download")}
+        </a>
+        <a
+          class="btn rounded-full border border-default px-6 py-3 text-sm font-semibold"
+          href={translatePath("/features/")}
+        >
+          {t("home.hero.cta.features")}
+        </a>
+      </div>
+    </header>
+
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold sm:text-3xl">{t("home.overview.title")}</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="space-y-2 rounded-2xl border border-default bg-offset p-6">
+          <h3 class="text-lg font-semibold">{t("home.overview.easy.title")}</h3>
+          <p class="text-sm text-offset">{t("home.overview.easy.desc")}</p>
+        </div>
+        <div class="space-y-2 rounded-2xl border border-default bg-offset p-6">
+          <h3 class="text-lg font-semibold">
+            {t("home.overview.devices.title")}
+          </h3>
+          <p class="text-sm text-offset">{t("home.overview.devices.desc")}</p>
+        </div>
+        <div class="space-y-2 rounded-2xl border border-default bg-offset p-6">
+          <h3 class="text-lg font-semibold">
+            {t("home.overview.lowResource.title")}
+          </h3>
+          <p class="text-sm text-offset">
+            {t("home.overview.lowResource.desc")}
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+

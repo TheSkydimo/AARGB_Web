@@ -1,0 +1,76 @@
+---
+import BaseLayout from "~/layouts/base-layout.astro";
+import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const sections = [
+  {
+    title: t("features.software.title"),
+    desc: t("features.software.desc"),
+    items: [t("features.software.b1"), t("features.software.b2"), t("features.software.b3")],
+  },
+  {
+    title: t("features.multidevice.title"),
+    desc: t("features.multidevice.desc"),
+    items: [
+      t("features.multidevice.i1"),
+      t("features.multidevice.i2"),
+      t("features.multidevice.i3"),
+      t("features.multidevice.i4"),
+    ],
+  },
+  {
+    title: t("features.modes.title"),
+    desc: t("features.modes.desc"),
+    items: [
+      t("features.modes.i1"),
+      t("features.modes.i2"),
+      t("features.modes.i3"),
+      t("features.modes.i4"),
+    ],
+  },
+  {
+    title: t("features.performance.title"),
+    desc: t("features.performance.desc"),
+    items: [
+      t("features.performance.b1"),
+      t("features.performance.b2"),
+      t("features.performance.b3"),
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={t("features.title")}
+  description={t("features.description")}
+  lang={lang}
+>
+  <div class="space-y-10">
+    <header class="space-y-4">
+      <h1 class="text-3xl font-extrabold tracking-tight sm:text-5xl">
+        {t("features.heading")}
+      </h1>
+    </header>
+
+    <div class="grid gap-6">
+      {
+        sections.map(({ title, desc, items }) => (
+          <section class="space-y-3 rounded-2xl border border-default bg-offset p-6">
+            <h2 class="text-xl font-bold sm:text-2xl">{title}</h2>
+            <p class="text-offset">{desc}</p>
+            <ul class="list-disc space-y-2 pl-6 text-offset">
+              {items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
+
+
