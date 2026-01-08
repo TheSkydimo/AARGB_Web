@@ -42,7 +42,6 @@ export const DOWNLOAD_TARGETS: DownloadTarget[] = [
     ],
     options: [
       { labelKey: "home.download.menu.primary", url: "https://aargb.com/AARGBSetup.exe" },
-      { labelKey: "home.download.menu.more", url: "internal:/download/" },
     ],
   },
   {
@@ -61,7 +60,6 @@ export const DOWNLOAD_TARGETS: DownloadTarget[] = [
     ],
     options: [
       { labelKey: "home.download.menu.primary", url: "#" },
-      { labelKey: "home.download.menu.more", url: "internal:/download/" },
     ],
     featured: true,
   },
@@ -77,7 +75,6 @@ export const DOWNLOAD_TARGETS: DownloadTarget[] = [
     ],
     options: [
       { labelKey: "home.download.menu.primary", url: "#" },
-      { labelKey: "home.download.menu.more", url: "internal:/download/" },
     ],
   },
 ];

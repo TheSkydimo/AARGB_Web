@@ -1,7 +1,8 @@
 ---
-import DownloadPage from "~/components/pages/download-page.astro";
+import { getLangFromUrl, useTranslatedPath } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+return Astro.redirect(translatePath("/"));
 ---
-
-<DownloadPage />
-
-
