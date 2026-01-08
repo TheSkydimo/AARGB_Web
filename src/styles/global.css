@@ -13,6 +13,17 @@ a,
   -webkit-text-fill-color: currentColor;
 }
 
+/* Text selection: avoid bright/white selection background on dark UI */
+::selection {
+  background: rgba(99, 102, 241, 0.35);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgba(99, 102, 241, 0.35);
+  color: #fff;
+}
+
 /* Shared "hero + glass cards" design language */
 .hero-shell {
   /* Keep spacing, remove the "boxed/glass" frame */
