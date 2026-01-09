@@ -1,0 +1,49 @@
+---
+export type Props = {
+  title: string;
+  desc: string;
+  items?: string[];
+  imageSrc: string;
+  imageAlt: string;
+};
+
+const {
+  title,
+  desc,
+  items = [],
+  imageSrc,
+  imageAlt,
+} = Astro.props satisfies Props;
+---
+
+<article class="feature-card group">
+  <div class="feature-figure">
+    <img
+      src={imageSrc}
+      alt={imageAlt}
+      loading="lazy"
+      decoding="async"
+      class="feature-figure__img"
+    />
+    <div class="feature-figure__overlay" aria-hidden="true"></div>
+  </div>
+
+  <div class="feature-content">
+    <h2 class="text-lg font-semibold tracking-tight sm:text-xl">{title}</h2>
+    <p class="text-sm text-offset">{desc}</p>
+
+    {
+      items.length > 0 && (
+        <ul class="mt-4 space-y-2 text-sm">
+          {items.map((item) => (
+            <li class="flex items-start gap-3 text-offset">
+              <span class="feature-dot" aria-hidden="true"></span>
+              <span class="flex-1">{item}</span>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</article>
+

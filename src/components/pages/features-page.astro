@@ -1,15 +1,35 @@
 ---
 import BaseLayout from "~/layouts/base-layout.astro";
+import FeatureStory from "~/components/feature-story.astro";
 import { getLangFromUrl, useTranslations } from "~/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const sections = [
+const highlights = [
+  {
+    title: t("common.highlights.easy.title"),
+    desc: t("common.highlights.easy.desc"),
+    imageSrc: "/images/1.webp",
+  },
+  {
+    title: t("common.highlights.devices.title"),
+    desc: t("common.highlights.devices.desc"),
+    imageSrc: "/images/2.webp",
+  },
+  {
+    title: t("common.highlights.lowResource.title"),
+    desc: t("common.highlights.lowResource.desc"),
+    imageSrc: "/images/3.webp",
+  },
+];
+
+const stories = [
   {
     title: t("features.software.title"),
     desc: t("features.software.desc"),
     items: [t("features.software.b1"), t("features.software.b2"), t("features.software.b3")],
+    imageSrc: "/images/about.webp",
   },
   {
     title: t("features.multidevice.title"),
@@ -20,6 +40,7 @@ const sections = [
       t("features.multidevice.i3"),
       t("features.multidevice.i4"),
     ],
+    imageSrc: "/images/1.webp",
   },
   {
     title: t("features.modes.title"),
@@ -30,6 +51,7 @@ const sections = [
       t("features.modes.i3"),
       t("features.modes.i4"),
     ],
+    imageSrc: "/images/2.webp",
   },
   {
     title: t("features.performance.title"),
@@ -39,6 +61,7 @@ const sections = [
       t("features.performance.b2"),
       t("features.performance.b3"),
     ],
+    imageSrc: "/images/3.webp",
   },
 ];
 ---
@@ -56,40 +79,35 @@ const sections = [
       <p class="gradient-text text-5xl font-extrabold tracking-tight sm:text-6xl" aria-hidden="true">
         {t("features.heading")}
       </p>
+      <p class="mx-auto max-w-3xl text-base text-offset sm:text-lg">
+        {t("features.description")}
+      </p>
     </header>
 
     <section class="mt-12 space-y-6">
       <h2 class="sr-only">{t("features.highlights.title")}</h2>
       <div class="grid gap-6 md:grid-cols-3">
-        <article class="glass-card">
-          <p class="text-lg font-semibold">{t("common.highlights.easy.title")}</p>
-          <p class="mt-2 text-sm text-offset">{t("common.highlights.easy.desc")}</p>
-        </article>
-        <article class="glass-card">
-          <p class="text-lg font-semibold">{t("common.highlights.devices.title")}</p>
-          <p class="mt-2 text-sm text-offset">{t("common.highlights.devices.desc")}</p>
-        </article>
-        <article class="glass-card">
-          <p class="text-lg font-semibold">
-            {t("common.highlights.lowResource.title")}
-          </p>
-          <p class="mt-2 text-sm text-offset">{t("common.highlights.lowResource.desc")}</p>
-        </article>
+        {highlights.map(({ title, desc, imageSrc }) => (
+          <FeatureStory
+            title={title}
+            desc={desc}
+            imageSrc={imageSrc}
+            imageAlt={title}
+          />
+        ))}
       </div>
     </section>
 
-    <section class="mt-12 grid gap-6">
+    <section class="mt-14 grid gap-6 md:grid-cols-2">
       {
-        sections.map(({ title, desc, items }) => (
-          <article class="glass-card space-y-3">
-            <h2 class="text-xl font-bold sm:text-2xl">{title}</h2>
-            <p class="text-offset">{desc}</p>
-            <ul class="list-disc space-y-2 pl-6 text-offset">
-              {items.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          </article>
+        stories.map(({ title, desc, items, imageSrc }, idx) => (
+          <FeatureStory
+            title={title}
+            desc={desc}
+            items={items}
+            imageSrc={imageSrc}
+            imageAlt={title}
+          />
         ))
       }
     </section>

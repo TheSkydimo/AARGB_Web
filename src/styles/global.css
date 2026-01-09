@@ -157,3 +157,35 @@ a,
 .download-menu__item {
   @apply block px-4 py-2.5 text-sm text-default hover:bg-black/40 hover:text-secondary;
 }
+
+/* Features: image + text story cards */
+.feature-card {
+  @apply overflow-hidden rounded-3xl border border-default bg-black/20;
+  @apply backdrop-blur-md;
+}
+
+.feature-content {
+  @apply space-y-4 p-6 sm:p-8;
+}
+
+.feature-figure {
+  @apply relative overflow-hidden border-b border-default;
+  @apply h-52 sm:h-60;
+}
+
+.feature-figure__img {
+  @apply absolute inset-0 h-full w-full object-cover;
+  @apply transition-transform duration-300 motion-reduce:transition-none;
+  @apply group-hover:scale-[1.03];
+}
+
+.feature-figure__overlay {
+  @apply absolute inset-0;
+  @apply bg-gradient-to-tr from-black/55 via-black/10 to-transparent;
+  pointer-events: none;
+}
+
+.feature-dot {
+  @apply mt-2 inline-block h-1.5 w-1.5 flex-none rounded-full;
+  background: linear-gradient(90deg, #6366f1, #d946ef, #ec4899);
+}
