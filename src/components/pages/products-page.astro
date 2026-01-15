@@ -2,35 +2,49 @@
 import BaseLayout from "~/layouts/base-layout.astro";
 import { Icon } from "astro-icon/components";
 import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+import { generateWebPageSchema } from "~/utils/structured-data";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const currentUrl = new URL(Astro.url.pathname, Astro.site);
+const webPageSchema = generateWebPageSchema(
+  t("products.title"),
+  t("products.description"),
+  currentUrl.toString(),
+  lang
+);
+
 const cards = [
   {
     id: "monitorBacklight",
-    imageSrc: "/images/2.webp",
+    imageSrc: "/images/Monitor backlight.png",
     iconName: "mdi:monitor",
+    imageAlt: "AARGB Monitor Backlight - LED strip ambient lighting behind display",
   },
   {
     id: "deskLamp",
-    imageSrc: "/images/1.webp",
+    imageSrc: "/images/Desk ambient lamp.png",
     iconName: "mdi:desk-lamp",
+    imageAlt: "AARGB Desk Ambient Lamp - Compact RGB lighting for desktop",
   },
   {
     id: "floorLamp",
-    imageSrc: "/images/3.webp",
+    imageSrc: "/images/Floor lamp.png",
     iconName: "mdi:floor-lamp",
+    imageAlt: "AARGB Floor Lamp - Standing RGB lamp for room ambient lighting",
   },
   {
     id: "peripherals",
-    imageSrc: undefined,
+    imageSrc: "/images/Peripherals.png",
     iconName: "mdi:keyboard",
+    imageAlt: "AARGB Peripherals - RGB keyboard, mouse, and mousepad",
   },
   {
     id: "pcCase",
-    imageSrc: undefined,
+    imageSrc: "/images/PC case ARGB devices.png",
     iconName: "mdi:fan",
+    imageAlt: "AARGB PC Case Devices - RGB fans and LED strips for computer case",
   },
 ] as const;
 ---
@@ -39,6 +53,7 @@ const cards = [
   title={t("products.title")}
   description={t("products.description")}
   lang={lang}
+  structuredData={webPageSchema}
 >
   <section class="hero-shell">
     <div class="hero-glow" aria-hidden="true"></div>
@@ -58,13 +73,13 @@ const cards = [
         {t("products.deviceTypes.title")}
       </h2>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {cards.map(({ id, iconName, imageSrc }) => (
+        {cards.map(({ id, iconName, imageSrc, imageAlt }) => (
           <article class="glass-card group flex flex-col gap-4">
             <div class="overflow-hidden rounded-2xl border border-default">
               {imageSrc ? (
                 <img
-                  src={imageSrc}
-                  alt={t(`products.cards.${id}.title` as any)}
+                  src={encodeURI(imageSrc)}
+                  alt={imageAlt}
                   loading="lazy"
                   decoding="async"
                   class="h-44 w-full object-cover transition-transform duration-300 motion-reduce:transition-none group-hover:scale-[1.03] sm:h-48"

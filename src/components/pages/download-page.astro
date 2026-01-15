@@ -2,6 +2,7 @@
 import BaseLayout from "~/layouts/base-layout.astro";
 import { getLangFromUrl, useTranslations } from "~/i18n/utils";
 import { DOWNLOAD_TARGETS } from "~/config/downloads";
+import { generateSoftwareSchema, generateWebPageSchema } from "~/utils/structured-data";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -14,12 +15,46 @@ const DOWNLOAD_LEGACY_URL: string = winClassic?.options?.[0]?.url ?? "#";
 
 const isNewDownloadAvailable = DOWNLOAD_NEW_URL !== "#";
 const isLegacyDownloadAvailable = DOWNLOAD_LEGACY_URL !== "#";
+
+// Generate structured data
+const currentUrl = new URL(Astro.url.pathname, Astro.site);
+const webPageSchema = generateWebPageSchema(
+  t("download.title"),
+  t("download.description"),
+  currentUrl.toString(),
+  lang
+);
+
+const softwareSchemas = [];
+if (winRecommended) {
+  softwareSchemas.push(
+    generateSoftwareSchema(
+      lang,
+      "AARGB Desktop Control Software (Recommended)",
+      winRecommended.version || "1.0.0",
+      "Windows 10+",
+      DOWNLOAD_NEW_URL
+    )
+  );
+}
+if (winClassic) {
+  softwareSchemas.push(
+    generateSoftwareSchema(
+      lang,
+      "AARGB Desktop Control Software (Classic)",
+      winClassic.version || "1.0.0",
+      "Windows 8+",
+      DOWNLOAD_LEGACY_URL
+    )
+  );
+}
 ---
 
 <BaseLayout
   title={t("download.title")}
   description={t("download.description")}
   lang={lang}
+  structuredData={[webPageSchema, ...softwareSchemas]}
 >
   <section class="hero-shell">
     <div class="hero-glow" aria-hidden="true"></div>
@@ -39,8 +74,7 @@ const isLegacyDownloadAvailable = DOWNLOAD_LEGACY_URL !== "#";
             !isNewDownloadAvailable && "pointer-events-none opacity-50",
           ]}
           href={isNewDownloadAvailable ? DOWNLOAD_NEW_URL : undefined}
-          target={isNewDownloadAvailable ? "_blank" : undefined}
-          rel={isNewDownloadAvailable ? "noopener noreferrer" : undefined}
+          download
           aria-disabled={!isNewDownloadAvailable}
         >
           {t("download.cta.new")}
@@ -51,8 +85,7 @@ const isLegacyDownloadAvailable = DOWNLOAD_LEGACY_URL !== "#";
             !isLegacyDownloadAvailable && "pointer-events-none opacity-50",
           ]}
           href={isLegacyDownloadAvailable ? DOWNLOAD_LEGACY_URL : undefined}
-          target={isLegacyDownloadAvailable ? "_blank" : undefined}
-          rel={isLegacyDownloadAvailable ? "noopener noreferrer" : undefined}
+          download
           aria-disabled={!isLegacyDownloadAvailable}
         >
           {t("download.cta.legacy")}

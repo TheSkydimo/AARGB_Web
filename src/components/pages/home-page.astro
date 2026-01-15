@@ -2,15 +2,26 @@
 import BaseLayout from "~/layouts/base-layout.astro";
 import { getLangFromUrl, useTranslations } from "~/i18n/utils";
 import HomeDownloadSection from "~/components/home-download-section.astro";
+import { generateOrganizationSchema, generateWebPageSchema } from "~/utils/structured-data";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+// Generate structured data for home page
+const organizationSchema = generateOrganizationSchema(lang);
+const webPageSchema = generateWebPageSchema(
+  t("home.title"),
+  t("home.description"),
+  Astro.site?.toString() || "https://AARGB.com",
+  lang
+);
 ---
 
 <BaseLayout
   title={t("home.title")}
   description={t("home.description")}
   lang={lang}
+  structuredData={[organizationSchema, webPageSchema]}
 >
   <HomeDownloadSection lang={lang} />
 </BaseLayout>

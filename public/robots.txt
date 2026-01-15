@@ -1,0 +1,21 @@
+# robots.txt for AARGB.com
+
+User-agent: *
+Allow: /
+
+# Disallow admin or sensitive paths (if any in the future)
+# Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://AARGB.com/sitemap-index.xml
+
+# Crawl-delay for specific bots (optional, adjust as needed)
+# User-agent: Googlebot
+# Crawl-delay: 0
+
+# Block common bad bots (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

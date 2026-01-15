@@ -1,12 +1,27 @@
 ---
 import BaseLayout from "~/layouts/base-layout.astro";
 import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+import { generateOrganizationSchema, generateWebPageSchema } from "~/utils/structured-data";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const currentUrl = new URL(Astro.url.pathname, Astro.site);
+const organizationSchema = generateOrganizationSchema(lang);
+const webPageSchema = generateWebPageSchema(
+  t("about.title"),
+  t("about.description"),
+  currentUrl.toString(),
+  lang
+);
 ---
 
-<BaseLayout title={t("about.title")} description={t("about.description")} lang={lang}>
+<BaseLayout
+  title={t("about.title")}
+  description={t("about.description")}
+  lang={lang}
+  structuredData={[organizationSchema, webPageSchema]}
+>
   <section class="hero-shell">
     <div class="hero-glow" aria-hidden="true"></div>
 

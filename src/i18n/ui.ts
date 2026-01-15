@@ -56,7 +56,6 @@ export const ui = {
     "home.download.cards.winRecommended.b3": "功能体系进一步扩展，支持更丰富的灯效与控制方式。",
     "home.download.cards.winRecommended.b4": "核心性能全面优化，运行更稳定、响应更迅速。",
     "home.download.cards.winRecommended.b5": "为用户带来更加流畅、高效的使用体验。",
-    "home.download.cards.winRecommended.b6": "部分功能基于开源项目 OpenRGB（GPL-2.0）构建。",
 
     "home.download.cards.macos.title": "MacOS 版",
     "home.download.cards.macos.os": "适配 MacOS 10.13 及以上。",
@@ -68,7 +67,7 @@ export const ui = {
       "通过 USB 将控制器连接至电脑，安装官方控制软件后即可完成配置与使用。",
     "common.highlights.devices.title": "设备种类齐全",
     "common.highlights.devices.desc":
-      "支持控制多种不同类型的灯光设备，包括屏幕背光灯、桌面灯、落地灯及其他 ARGB 外设。",
+      "AARGB 提供多种类型的专属灯光设备，包括屏幕背光灯、桌面氛围灯、落地灯等产品线。",
     "common.highlights.lowResource.title": "占用资源低",
     "common.highlights.lowResource.desc":
       "在多设备控制场景下，系统资源占用较低，不会影响电脑的正常使用。",
@@ -81,19 +80,19 @@ export const ui = {
     "products.deviceTypes.monitorBacklight": "屏幕背光灯",
     "products.deviceTypes.deskLamp": "桌面氛围灯",
     "products.deviceTypes.floorLamp": "落地灯",
-    "products.deviceTypes.peripherals": "键盘、鼠标、鼠标垫",
-    "products.deviceTypes.pcCase": "机箱风扇等 ARGB 设备",
+    "products.deviceTypes.peripherals": "AARGB 键鼠套装",
+    "products.deviceTypes.pcCase": "AARGB 机箱灯光套件",
     "products.cards.monitorBacklight.title": "屏幕背光灯",
     "products.cards.monitorBacklight.desc": "适用于显示器背部环境光，支持同屏/音乐/动态等灯效模式。",
     "products.cards.deskLamp.title": "桌面氛围灯",
     "products.cards.deskLamp.desc": "桌面范围补光与氛围灯效，适合游戏、观影与日常使用。",
     "products.cards.floorLamp.title": "落地灯",
     "products.cards.floorLamp.desc": "更大范围的环境光覆盖，适合房间角落或桌边布置。",
-    "products.cards.peripherals.title": "键鼠与外设",
-    "products.cards.peripherals.desc": "支持键盘、鼠标、鼠标垫等外设灯效的统一管理与同步。",
-    "products.cards.pcCase.title": "机箱 ARGB 设备",
-    "products.cards.pcCase.desc": "机箱风扇、灯带等 ARGB 设备的统一控制与效果联动。",
-    "products.note": "所有设备均通过官方软件进行统一管理与配置。",
+    "products.cards.peripherals.title": "AARGB 键鼠套装",
+    "products.cards.peripherals.desc": "AARGB 品牌键盘、鼠标、鼠标垫,支持灯效统一管理与同步。",
+    "products.cards.pcCase.title": "AARGB 机箱灯光套件",
+    "products.cards.pcCase.desc": "AARGB 品牌机箱风扇、灯带等灯光套件的统一控制与效果联动。",
+    "products.note": "所有 AARGB 品牌设备均通过官方软件进行统一管理与配置。",
 
     "features.title": "特性 | AARGB",
     "features.description": "了解 AARGB 官方控制软件与多设备灯效能力。",
@@ -107,11 +106,11 @@ export const ui = {
     "features.software.b3": "专注于灯光控制相关功能",
     "features.multidevice.title": "多设备统一控制",
     "features.multidevice.desc":
-      "通过一套软件即可同时控制多个 ARGB 灯光设备，实现统一配置与同步效果。",
-    "features.multidevice.i1": "屏幕背光灯",
-    "features.multidevice.i2": "桌面灯 / 落地灯",
-    "features.multidevice.i3": "键盘、鼠标、鼠标垫",
-    "features.multidevice.i4": "机箱风扇等",
+      "通过一套官方软件即可同时控制多个 AARGB 品牌灯光设备，实现统一配置与同步效果。",
+    "features.multidevice.i1": "AARGB 屏幕背光灯",
+    "features.multidevice.i2": "AARGB 桌面灯 / 落地灯",
+    "features.multidevice.i3": "AARGB 键鼠套装",
+    "features.multidevice.i4": "AARGB 机箱灯光套件",
     "features.modes.title": "灯效模式",
     "features.modes.desc": "软件内置多种灯效模式，适用于不同使用场景。",
     "features.modes.i1": "同屏模式：根据屏幕内容实时变化灯光颜色",
@@ -297,7 +296,6 @@ export const ui = {
     "home.download.cards.winRecommended.b3": "Expanded feature set with richer lighting effects and control options.",
     "home.download.cards.winRecommended.b4": "Performance optimizations for greater stability and faster response.",
     "home.download.cards.winRecommended.b5": "A smoother, more efficient experience overall.",
-    "home.download.cards.winRecommended.b6": "Some features are built on OpenRGB (GPL-2.0).",
 
     "home.download.cards.macos.title": "MacOS",
     "home.download.cards.macos.os": "For macOS 10.13+.",
@@ -307,9 +305,9 @@ export const ui = {
     "common.highlights.easy.title": "Easy setup",
     "common.highlights.easy.desc":
       "Connect the controller to your PC via USB, install the official software, and you’re ready to configure and use it.",
-    "common.highlights.devices.title": "Broad device support",
+    "common.highlights.devices.title": "Broad device lineup",
     "common.highlights.devices.desc":
-      "Supports various lighting devices, including monitor backlights, desk lamps, floor lamps, and other ARGB peripherals.",
+      "AARGB offers various proprietary lighting devices, including monitor backlights, desk lamps, floor lamps, and more.",
     "common.highlights.lowResource.title": "Low resource usage",
     "common.highlights.lowResource.desc":
       "Designed to keep system resource usage low even when controlling multiple devices.",
@@ -323,8 +321,8 @@ export const ui = {
     "products.deviceTypes.monitorBacklight": "Monitor backlight",
     "products.deviceTypes.deskLamp": "Desk ambient lamp",
     "products.deviceTypes.floorLamp": "Floor lamp",
-    "products.deviceTypes.peripherals": "Keyboard, mouse, mousepad",
-    "products.deviceTypes.pcCase": "PC case fans and other ARGB devices",
+    "products.deviceTypes.peripherals": "AARGB Peripheral Set",
+    "products.deviceTypes.pcCase": "AARGB PC Lighting Kit",
     "products.cards.monitorBacklight.title": "Monitor backlight",
     "products.cards.monitorBacklight.desc":
       "Ambient backlighting behind your display, with screen sync, music reactive, and dynamic modes.",
@@ -334,13 +332,13 @@ export const ui = {
     "products.cards.floorLamp.title": "Floor lamp",
     "products.cards.floorLamp.desc":
       "Wider ambient coverage for rooms—great for corners or beside your desk.",
-    "products.cards.peripherals.title": "Peripherals",
+    "products.cards.peripherals.title": "AARGB Peripheral Set",
     "products.cards.peripherals.desc":
-      "Unified control for keyboards, mice, and mousepads with synchronized effects.",
-    "products.cards.pcCase.title": "PC case ARGB devices",
+      "AARGB brand keyboard, mouse, and mousepad with unified lighting control and synchronized effects.",
+    "products.cards.pcCase.title": "AARGB PC Lighting Kit",
     "products.cards.pcCase.desc":
-      "Centralized control for case fans, light strips, and other ARGB hardware.",
-    "products.note": "All devices are managed and configured through the official software.",
+      "AARGB brand case fans, LED strips, and other lighting kits with centralized control.",
+    "products.note": "All AARGB brand devices are managed and configured through the official software.",
 
     "features.title": "Features | AARGB",
     "features.description": "Official control software, multi-device control, modes, and stability.",
@@ -354,11 +352,11 @@ export const ui = {
     "features.software.b3": "Focused on lighting control features",
     "features.multidevice.title": "Unified multi-device control",
     "features.multidevice.desc":
-      "Control multiple ARGB lighting devices with one app for unified configuration and synchronized effects.",
-    "features.multidevice.i1": "Monitor backlight",
-    "features.multidevice.i2": "Desk lamp / floor lamp",
-    "features.multidevice.i3": "Keyboard, mouse, mousepad",
-    "features.multidevice.i4": "PC case fans, etc.",
+      "Control multiple AARGB brand lighting devices with one official app for unified configuration and synchronized effects.",
+    "features.multidevice.i1": "AARGB Monitor backlight",
+    "features.multidevice.i2": "AARGB Desk lamp / floor lamp",
+    "features.multidevice.i3": "AARGB Peripheral set",
+    "features.multidevice.i4": "AARGB PC lighting kit",
     "features.modes.title": "Lighting modes",
     "features.modes.desc": "Built-in modes for different use cases.",
     "features.modes.i1": "Screen sync: colors change with on-screen content",
@@ -552,7 +550,6 @@ export const ui = {
     "home.download.cards.winRecommended.b3": "Расширенная система функций с более богатым набором эффектов и способов управления.",
     "home.download.cards.winRecommended.b4": "Оптимизация производительности: стабильнее работа и быстрее отклик.",
     "home.download.cards.winRecommended.b5": "Более плавный и эффективный опыт использования.",
-    "home.download.cards.winRecommended.b6": "Часть функций построена на OpenRGB (GPL-2.0).",
 
     "home.download.cards.macos.title": "macOS",
     "home.download.cards.macos.os": "Для macOS 10.13+.",
@@ -562,9 +559,9 @@ export const ui = {
     "common.highlights.easy.title": "Простая установка",
     "common.highlights.easy.desc":
       "Подключите контроллер к ПК по USB, установите официальное ПО — и можно настраивать и пользоваться.",
-    "common.highlights.devices.title": "Широкая поддержка устройств",
+    "common.highlights.devices.title": "Широкая линейка устройств",
     "common.highlights.devices.desc":
-      "Поддерживаются разные типы подсветки: подсветка монитора, настольные лампы, торшеры и другие ARGB-периферийные устройства.",
+      "AARGB предлагает различные фирменные устройства подсветки: подсветка монитора, настольные лампы, торшеры и другое.",
     "common.highlights.lowResource.title": "Низкая нагрузка",
     "common.highlights.lowResource.desc":
       "Низкое потребление ресурсов даже при управлении несколькими устройствами.",
@@ -578,8 +575,8 @@ export const ui = {
     "products.deviceTypes.monitorBacklight": "Подсветка монитора",
     "products.deviceTypes.deskLamp": "Настольная атмосферная лампа",
     "products.deviceTypes.floorLamp": "Торшер",
-    "products.deviceTypes.peripherals": "Клавиатура, мышь, коврик для мыши",
-    "products.deviceTypes.pcCase": "Вентиляторы корпуса и другие ARGB-устройства",
+    "products.deviceTypes.peripherals": "Периферийный набор AARGB",
+    "products.deviceTypes.pcCase": "Световой комплект AARGB для ПК",
     "products.cards.monitorBacklight.title": "Подсветка монитора",
     "products.cards.monitorBacklight.desc":
       "Атмосферная подсветка за монитором с режимами синхронизации с экраном, музыкой и динамикой.",
@@ -589,13 +586,13 @@ export const ui = {
     "products.cards.floorLamp.title": "Торшер",
     "products.cards.floorLamp.desc":
       "Более широкое покрытие света — удобно для углов комнаты или рядом со столом.",
-    "products.cards.peripherals.title": "Периферия",
+    "products.cards.peripherals.title": "Периферийный набор AARGB",
     "products.cards.peripherals.desc":
-      "Единое управление подсветкой клавиатуры, мыши и коврика с синхронизацией эффектов.",
-    "products.cards.pcCase.title": "ARGB устройства в корпусе",
+      "Фирменные клавиатура, мышь и коврик AARGB с единым управлением подсветкой и синхронизацией эффектов.",
+    "products.cards.pcCase.title": "Световой комплект AARGB для ПК",
     "products.cards.pcCase.desc":
-      "Централизованное управление вентиляторами, лентами и другим ARGB‑железом.",
-    "products.note": "Все устройства управляются и настраиваются через официальное ПО.",
+      "Фирменные вентиляторы, LED-ленты и другие световые комплекты AARGB с централизованным управлением.",
+    "products.note": "Все устройства бренда AARGB управляются и настраиваются через официальное ПО.",
 
     "features.title": "Особенности | AARGB",
     "features.description": "Официальное ПО, синхронизация нескольких устройств, режимы и стабильность.",
@@ -609,11 +606,11 @@ export const ui = {
     "features.software.b3": "Фокус на функциях управления подсветкой",
     "features.multidevice.title": "Единое управление несколькими устройствами",
     "features.multidevice.desc":
-      "Одна программа позволяет управлять несколькими ARGB-устройствами, настраивать их единообразно и синхронизировать эффекты.",
-    "features.multidevice.i1": "Подсветка монитора",
-    "features.multidevice.i2": "Настольная лампа / торшер",
-    "features.multidevice.i3": "Клавиатура, мышь, коврик",
-    "features.multidevice.i4": "Вентиляторы корпуса и т. п.",
+      "Одна программа позволяет управлять несколькими фирменными устройствами AARGB, настраивать их единообразно и синхронизировать эффекты.",
+    "features.multidevice.i1": "Подсветка монитора AARGB",
+    "features.multidevice.i2": "Настольная лампа / торшер AARGB",
+    "features.multidevice.i3": "Периферийный набор AARGB",
+    "features.multidevice.i4": "Световой комплект AARGB для ПК",
     "features.modes.title": "Режимы эффектов",
     "features.modes.desc": "Встроенные режимы для разных сценариев использования.",
     "features.modes.i1": "Синхронизация с экраном: цвет меняется по содержимому экрана",
@@ -809,7 +806,6 @@ export const ui = {
     "home.download.cards.winRecommended.b3": "Daha zengin efektler ve kontrol seçenekleri için genişletilmiş özellik seti.",
     "home.download.cards.winRecommended.b4": "Performans iyileştirmeleri: daha kararlı çalışma ve daha hızlı tepki.",
     "home.download.cards.winRecommended.b5": "Daha akıcı ve verimli bir kullanım deneyimi.",
-    "home.download.cards.winRecommended.b6": "Bazı özellikler OpenRGB (GPL-2.0) üzerine kuruludur.",
 
     "home.download.cards.macos.title": "macOS",
     "home.download.cards.macos.os": "macOS 10.13+ için.",
@@ -819,9 +815,9 @@ export const ui = {
     "common.highlights.easy.title": "Kolay kurulum",
     "common.highlights.easy.desc":
       "Denetleyiciyi USB ile PC’ye bağlayın, resmi yazılımı yükleyin ve kullanıma başlayın.",
-    "common.highlights.devices.title": "Geniş cihaz desteği",
+    "common.highlights.devices.title": "Geniş cihaz serisi",
     "common.highlights.devices.desc":
-      "Monitör arka aydınlatması, masa lambası, yer lambası ve diğer ARGB çevre birimleri dâhil çeşitli cihazları destekler.",
+      "AARGB, monitör arka aydınlatması, masa lambası, yer lambası ve daha fazlası dahil çeşitli özel aydınlatma cihazları sunar.",
     "common.highlights.lowResource.title": "Düşük kaynak kullanımı",
     "common.highlights.lowResource.desc":
       "Birden fazla cihaz kontrol edilirken bile sistem kaynak kullanımını düşük tutacak şekilde tasarlanmıştır.",
@@ -835,8 +831,8 @@ export const ui = {
     "products.deviceTypes.monitorBacklight": "Monitör arka aydınlatması",
     "products.deviceTypes.deskLamp": "Masa ambiyans lambası",
     "products.deviceTypes.floorLamp": "Yer lambası",
-    "products.deviceTypes.peripherals": "Klavye, mouse, mousepad",
-    "products.deviceTypes.pcCase": "Kasa fanları ve diğer ARGB cihazlar",
+    "products.deviceTypes.peripherals": "AARGB Çevre Birimi Seti",
+    "products.deviceTypes.pcCase": "AARGB PC Aydınlatma Kiti",
     "products.cards.monitorBacklight.title": "Monitör arka aydınlatması",
     "products.cards.monitorBacklight.desc":
       "Ekran arkası ambiyans ışığı; ekran senkronu, müzik tepkili ve dinamik modlar.",
@@ -846,13 +842,13 @@ export const ui = {
     "products.cards.floorLamp.title": "Yer lambası",
     "products.cards.floorLamp.desc":
       "Oda genelinde daha geniş ambiyans kapsaması; köşeler ve masa yanı için ideal.",
-    "products.cards.peripherals.title": "Çevre birimleri",
+    "products.cards.peripherals.title": "AARGB Çevre Birimi Seti",
     "products.cards.peripherals.desc":
-      "Klavye, mouse ve mousepad için birleşik kontrol ve senkron efektler.",
-    "products.cards.pcCase.title": "Kasa ARGB cihazları",
+      "AARGB marka klavye, mouse ve mousepad ile birleşik aydınlatma kontrolü ve senkron efektler.",
+    "products.cards.pcCase.title": "AARGB PC Aydınlatma Kiti",
     "products.cards.pcCase.desc":
-      "Kasa fanları, LED şeritler ve diğer ARGB donanımlar için merkezi kontrol.",
-    "products.note": "Tüm cihazlar resmi yazılım üzerinden tek merkezden yönetilir ve yapılandırılır.",
+      "AARGB marka kasa fanları, LED şeritler ve diğer aydınlatma kitleri için merkezi kontrol.",
+    "products.note": "Tüm AARGB marka cihazlar resmi yazılım üzerinden tek merkezden yönetilir ve yapılandırılır.",
 
     "features.title": "Özellikler | AARGB",
     "features.description": "Resmi kontrol yazılımı, çoklu cihaz yönetimi, modlar ve kararlılık.",
@@ -866,11 +862,11 @@ export const ui = {
     "features.software.b3": "Aydınlatma kontrolüne odaklanır",
     "features.multidevice.title": "Birleşik çoklu cihaz kontrolü",
     "features.multidevice.desc":
-      "Tek bir yazılım ile birden fazla ARGB cihazını yönetin; ayarları birleştirin ve efektleri senkronlayın.",
-    "features.multidevice.i1": "Monitör arka aydınlatması",
-    "features.multidevice.i2": "Masa lambası / yer lambası",
-    "features.multidevice.i3": "Klavye, mouse, mousepad",
-    "features.multidevice.i4": "Kasa fanları vb.",
+      "Tek bir resmi yazılım ile birden fazla AARGB marka cihazını yönetin; ayarları birleştirin ve efektleri senkronlayın.",
+    "features.multidevice.i1": "AARGB Monitör arka aydınlatması",
+    "features.multidevice.i2": "AARGB Masa lambası / yer lambası",
+    "features.multidevice.i3": "AARGB Çevre birimi seti",
+    "features.multidevice.i4": "AARGB PC aydınlatma kiti",
     "features.modes.title": "Efekt modları",
     "features.modes.desc": "Farklı kullanım senaryoları için yerleşik modlar.",
     "features.modes.i1": "Ekran senkronu: renkler ekrandaki içeriğe göre değişir",

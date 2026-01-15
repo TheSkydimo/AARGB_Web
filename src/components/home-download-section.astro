@@ -94,8 +94,7 @@ function isExternal(url: string) {
                     !primaryHref && "download-btn--disabled",
                   ]}
                   href={primaryHref}
-                  target={primaryHref && primaryExternal ? "_blank" : undefined}
-                  rel={primaryHref && primaryExternal ? "noopener noreferrer" : undefined}
+                  download
                   aria-disabled={!primaryHref}
                 >
                   <Icon name="mdi:download" class="size-5" />
@@ -110,14 +109,12 @@ function isExternal(url: string) {
                     <ul class="download-menu__list">
                       {options.map((o) => {
                         const href = o.href;
-                        const external = isExternal(href);
                         return (
                           <li>
                             <a
                               class="download-menu__item"
                               href={href}
-                              target={external ? "_blank" : undefined}
-                              rel={external ? "noopener noreferrer" : undefined}
+                              download
                             >
                               {t(o.labelKey as any)}
                             </a>

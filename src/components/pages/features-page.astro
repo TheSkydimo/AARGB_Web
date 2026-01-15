@@ -2,9 +2,18 @@
 import BaseLayout from "~/layouts/base-layout.astro";
 import FeatureStory from "~/components/feature-story.astro";
 import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+import { generateWebPageSchema } from "~/utils/structured-data";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const currentUrl = new URL(Astro.url.pathname, Astro.site);
+const webPageSchema = generateWebPageSchema(
+  t("features.title"),
+  t("features.description"),
+  currentUrl.toString(),
+  lang
+);
 
 const highlights = [
   {
@@ -29,7 +38,7 @@ const stories = [
     title: t("features.software.title"),
     desc: t("features.software.desc"),
     items: [t("features.software.b1"), t("features.software.b2"), t("features.software.b3")],
-    imageSrc: "/images/about.webp",
+    imageSrc: "/images/1.webp",
   },
   {
     title: t("features.multidevice.title"),
@@ -40,7 +49,7 @@ const stories = [
       t("features.multidevice.i3"),
       t("features.multidevice.i4"),
     ],
-    imageSrc: "/images/1.webp",
+    imageSrc: "/images/2.webp",
   },
   {
     title: t("features.modes.title"),
@@ -51,16 +60,6 @@ const stories = [
       t("features.modes.i3"),
       t("features.modes.i4"),
     ],
-    imageSrc: "/images/2.webp",
-  },
-  {
-    title: t("features.performance.title"),
-    desc: t("features.performance.desc"),
-    items: [
-      t("features.performance.b1"),
-      t("features.performance.b2"),
-      t("features.performance.b3"),
-    ],
     imageSrc: "/images/3.webp",
   },
 ];
@@ -70,6 +69,7 @@ const stories = [
   title={t("features.title")}
   description={t("features.description")}
   lang={lang}
+  structuredData={webPageSchema}
 >
   <section class="hero-shell">
     <div class="hero-glow" aria-hidden="true"></div>
@@ -98,9 +98,9 @@ const stories = [
       </div>
     </section>
 
-    <section class="mt-14 grid gap-6 md:grid-cols-2">
+    <section class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
-        stories.map(({ title, desc, items, imageSrc }, idx) => (
+        stories.map(({ title, desc, items, imageSrc }) => (
           <FeatureStory
             title={title}
             desc={desc}

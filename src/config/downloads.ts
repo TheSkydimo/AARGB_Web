@@ -56,7 +56,6 @@ export const DOWNLOAD_TARGETS: DownloadTarget[] = [
       "home.download.cards.winRecommended.b3",
       "home.download.cards.winRecommended.b4",
       "home.download.cards.winRecommended.b5",
-      "home.download.cards.winRecommended.b6",
     ],
     options: [
       { labelKey: "home.download.menu.primary", url: "#" },

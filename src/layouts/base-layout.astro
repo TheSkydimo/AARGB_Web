@@ -8,16 +8,49 @@ type Props = {
   title: string;
   description?: string;
   lang: string;
+  structuredData?: object | object[];
 };
 
 const {
   title,
   description = "AARGB",
   lang,
+  structuredData,
 } = Astro.props satisfies Props;
 
 const { generator, site } = Astro;
 const image = new URL("images/LOGO.png", site);
+
+// SEO: Build canonical URL and alternate language URLs
+const LOCALES = ["zh", "en", "ru", "tr"] as const;
+const DEFAULT_LOCALE = "en";
+
+// Get current path without locale prefix
+const pathname = Astro.url.pathname;
+const segments = pathname.split("/").filter(Boolean);
+const firstSegment = segments[0];
+const isLocaleInPath = LOCALES.includes(firstSegment as any);
+const pathWithoutLocale = isLocaleInPath 
+  ? "/" + segments.slice(1).join("/")
+  : pathname;
+
+// Normalize path (remove trailing slash unless root)
+const normalizedPath = pathWithoutLocale === "/" 
+  ? "/" 
+  : pathWithoutLocale.replace(/\/$/, "") || "/";
+
+// Build canonical URL (always use the current language version)
+const canonicalURL = lang === DEFAULT_LOCALE
+  ? new URL(normalizedPath, site)
+  : new URL(`/${lang}${normalizedPath}`, site);
+
+// Build alternate URLs for all languages
+const alternateURLs = LOCALES.map(locale => ({
+  lang: locale,
+  url: locale === DEFAULT_LOCALE
+    ? new URL(normalizedPath, site).href
+    : new URL(`/${locale}${normalizedPath}`, site).href
+}));
 ---
 
 <!doctype html>
@@ -31,13 +64,33 @@ const image = new URL("images/LOGO.png", site);
     <title>{title}</title>
     <meta name="description" content={description} />
 
+    <!-- SEO: Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- SEO: Alternate language versions (hreflang) -->
+    {alternateURLs.map(({ lang: hreflang, url }) => (
+      <link rel="alternate" hreflang={hreflang} href={url} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL(normalizedPath, site)} />
+
     <!-- social media -->
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content={lang === "zh" ? "zh_CN" : lang === "ru" ? "ru_RU" : lang === "tr" ? "tr_TR" : "en_US"} />
+    {alternateURLs.filter(alt => alt.lang !== lang).map(({ lang: altLang }) => (
+      <meta property="og:locale:alternate" content={altLang === "zh" ? "zh_CN" : altLang === "ru" ? "ru_RU" : altLang === "tr" ? "tr_TR" : "en_US"} />
+    ))}
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Structured Data (JSON-LD) -->
+    {structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(Array.isArray(structuredData) ? structuredData : [structuredData])} />
+    )}
 
     <!-- initialize theme -->
     <script is:inline>
