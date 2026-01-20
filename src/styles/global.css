@@ -28,12 +28,14 @@ a,
 .hero-shell {
   /* Keep spacing, remove the "boxed/glass" frame */
   @apply relative px-6 py-12 sm:px-12 sm:py-16 overflow-hidden;
+  isolation: isolate;
   background: transparent;
 }
 
 .hero-glow {
   position: absolute;
   inset: -40%;
+  z-index: -1;
   background: radial-gradient(
       600px 300px at 35% 30%,
       rgba(99, 102, 241, 0.22),

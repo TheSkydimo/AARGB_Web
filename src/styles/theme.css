@@ -1,11 +1,11 @@
 [data-theme="light"] {
-  --color-primary: theme("colors.gray.900");
-  --color-secondary: theme("colors.gray.700");
-  --color-text: theme("colors.gray.900");
-  --color-text-offset: theme("colors.gray.600");
-  --color-background: #000000;
-  --color-background-offset: #0b0b0b;
-  --color-border: theme("colors.gray.900" / 10%);
+  --color-primary: theme("colors.slate.900");
+  --color-secondary: theme("colors.slate.700");
+  --color-text: theme("colors.slate.900");
+  --color-text-offset: theme("colors.slate.600");
+  --color-background: theme("colors.slate.50");
+  --color-background-offset: theme("colors.white");
+  --color-border: theme("colors.slate.900" / 12%);
 }
 
 [data-theme="dark"] {
