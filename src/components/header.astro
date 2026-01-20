@@ -1,7 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
 import LanguagePicker from "~/components/language-picker.astro";
-import ThemeSwitcher from "~/components/theme-switcher.astro";
 import { getLangFromUrl, useTranslations, useTranslatedPath } from "~/i18n/utils";
 import type { NavItem } from "~/types";
 
@@ -63,8 +62,6 @@ const navItems: Array<NavItem> = [
       >
         <Icon name="mdi:menu" class="size-8" />
       </button>
-
-      <ThemeSwitcher />
     </div>
   </div>
 

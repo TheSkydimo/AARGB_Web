@@ -1,13 +1,3 @@
-[data-theme="light"] {
-  --color-primary: theme("colors.slate.900");
-  --color-secondary: theme("colors.slate.700");
-  --color-text: theme("colors.slate.900");
-  --color-text-offset: theme("colors.slate.600");
-  --color-background: theme("colors.slate.50");
-  --color-background-offset: theme("colors.white");
-  --color-border: theme("colors.slate.900" / 12%);
-}
-
 [data-theme="dark"] {
   --color-primary: theme("colors.gray.50");
   --color-secondary: theme("colors.gray.200");

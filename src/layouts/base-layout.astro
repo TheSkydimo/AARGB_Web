@@ -92,28 +92,12 @@ const alternateURLs = LOCALES.map(locale => ({
       <script type="application/ld+json" set:html={JSON.stringify(Array.isArray(structuredData) ? structuredData : [structuredData])} />
     )}
 
-    <!-- initialize theme -->
+    <!-- force dark theme (remove light theme entirely) -->
     <script is:inline>
-      const themeSaved = localStorage.getItem("theme");
-
-      if (themeSaved) {
-        document.documentElement.dataset.theme = themeSaved;
-      } else {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
-        ).matches;
-        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
-      }
-
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => {
-          if (!localStorage.getItem("theme")) {
-            document.documentElement.dataset.theme = event.matches
-              ? "dark"
-              : "light";
-          }
-        });
+      document.documentElement.dataset.theme = "dark";
+      try {
+        localStorage.removeItem("theme");
+      } catch {}
     </script>
 
     <!-- persist language + redirect non-prefixed routes to preferred locale -->
