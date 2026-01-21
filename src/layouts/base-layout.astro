@@ -105,9 +105,19 @@ const alternateURLs = LOCALES.map(locale => ({
       const LOCALES = ["zh", "en", "ru", "tr"];
       const DEFAULT_LOCALE = "en";
 
+      const pathname = window.location.pathname;
+      const segments = pathname.split("/").filter(Boolean);
+      const first = segments[0];
+
       const currentLang = document.documentElement.lang;
-      if (LOCALES.includes(currentLang)) {
-        localStorage.setItem("lang", currentLang);
+      // Only persist when the URL explicitly includes a locale prefix
+      // (e.g. "/zh/...", "/ru/..."). This prevents first-time visits to
+      // non-prefixed routes (like "/") from "locking" the preference to
+      // the default locale.
+      if (first && LOCALES.includes(first) && first === currentLang) {
+        try {
+          localStorage.setItem("lang", currentLang);
+        } catch {}
       }
 
       const detectBrowserLocale = () => {
@@ -125,20 +135,21 @@ const alternateURLs = LOCALES.map(locale => ({
         return DEFAULT_LOCALE;
       };
 
-      let preferred = localStorage.getItem("lang");
+      let preferred = null;
+      try {
+        preferred = localStorage.getItem("lang");
+      } catch {}
       if (!preferred || !LOCALES.includes(preferred)) {
         preferred = detectBrowserLocale();
         // Only persist non-default; default behavior stays English.
         if (preferred && preferred !== DEFAULT_LOCALE) {
-          localStorage.setItem("lang", preferred);
+          try {
+            localStorage.setItem("lang", preferred);
+          } catch {}
         }
       }
 
       if (preferred && LOCALES.includes(preferred) && preferred !== DEFAULT_LOCALE) {
-        const pathname = window.location.pathname;
-        const segments = pathname.split("/").filter(Boolean);
-        const first = segments[0];
-
         // Only redirect when URL has no locale prefix (e.g. /products/)
         if (!first || !LOCALES.includes(first)) {
           const normalized = pathname.startsWith("/") ? pathname : `/${pathname}`;
