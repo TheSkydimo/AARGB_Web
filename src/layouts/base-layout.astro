@@ -19,7 +19,7 @@ const {
 } = Astro.props satisfies Props;
 
 const { generator, site } = Astro;
-const image = new URL("images/LOGO.png", site);
+const image = new URL("images/LOGO.webp", site);
 
 // SEO: Build canonical URL and alternate language URLs
 const LOCALES = ["zh", "en", "ru", "tr"] as const;
@@ -58,7 +58,14 @@ const alternateURLs = LOCALES.map(locale => ({
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/images/LOGO.png" type="image/png" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/LOGO.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
     <meta name="generator" content={generator} />
 
     <title>{title}</title>

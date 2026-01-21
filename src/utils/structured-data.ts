@@ -75,7 +75,7 @@ export function generateOrganizationSchema(locale: string): OrganizationSchema {
     "@type": "Organization",
     name: "AARGB",
     url: "https://AARGB.com",
-    logo: "https://AARGB.com/images/LOGO.png",
+    logo: "https://AARGB.com/images/LOGO.webp",
     description: descriptions[locale] || descriptions.en,
     sameAs: [
       // 如果有社交媒体账号,在这里添加
