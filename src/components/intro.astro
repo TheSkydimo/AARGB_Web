@@ -1,15 +1,18 @@
 ---
 import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
+import ResponsiveImage from "~/components/responsive-image.astro";
 ---
 
 <ContentSection title="Just ship less" id="intro">
-  <img
+  <ResponsiveImage
     slot="eyebrow"
     src="/images/LOGO.webp"
     alt="AARGB"
-    width="332"
-    height="256"
+    widths={[96, 128, 192, 256, 320]}
+    sizes="166px"
+    width={332}
+    height={256}
     class="h-32 w-auto"
     loading="lazy"
     decoding="async"

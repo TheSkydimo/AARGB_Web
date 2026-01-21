@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import LanguagePicker from "~/components/language-picker.astro";
+import ResponsiveImage from "~/components/responsive-image.astro";
 import { getLangFromUrl, useTranslations, useTranslatedPath } from "~/i18n/utils";
 import type { NavItem } from "~/types";
 
@@ -23,11 +24,13 @@ const navItems: Array<NavItem> = [
   <div class="header-shell">
     <a class="brand hover:!text-default" href={translatePath("/")}>
       <span class="sr-only">AARGB</span>
-      <img
+      <ResponsiveImage
         src="/images/LOGO.webp"
         alt="AARGB"
-        width="332"
-        height="256"
+        widths={[96, 128, 192, 256, 320]}
+        sizes="52px"
+        width={332}
+        height={256}
         class="h-10 w-auto"
         loading="eager"
         decoding="async"
@@ -82,11 +85,13 @@ const navItems: Array<NavItem> = [
           </button>
         </header>
         <div class="flex justify-center">
-          <img
+          <ResponsiveImage
             src="/images/LOGO.webp"
             alt="AARGB"
-            width="332"
-            height="256"
+            widths={[96, 128, 192, 256, 320]}
+            sizes="83px"
+            width={332}
+            height={256}
             class="h-16 w-auto"
             loading="lazy"
             decoding="async"

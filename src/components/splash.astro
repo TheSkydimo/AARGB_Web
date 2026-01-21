@@ -4,6 +4,7 @@ import astronautImage from "~/assets/astronaut.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
+import ResponsiveImage from "~/components/responsive-image.astro";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
@@ -19,14 +20,17 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     <h2
       class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
-      <img
+      <ResponsiveImage
         src="/images/LOGO.webp"
         alt="AARGB"
-        width="332"
-        height="256"
+        widths={[96, 128, 192, 256, 320]}
+        sizes="(min-width: 768px) 166px, 104px"
+        width={332}
+        height={256}
         class="h-20 w-auto md:h-32"
         loading="eager"
         decoding="async"
+        fetchpriority="high"
       />
       <div
         class="gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-8xl"

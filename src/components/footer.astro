@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslatedPath, useTranslations } from "~/i18n/utils";
+import ResponsiveImage from "~/components/responsive-image.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -22,11 +23,13 @@ const legalLinks = [
   <div class="mx-auto w-full max-w-7xl px-4 sm:px-0">
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
       <div class="flex items-center gap-3">
-        <img
+        <ResponsiveImage
           src="/images/LOGO.webp"
           alt="AARGB"
-          width="332"
-          height="256"
+          widths={[96, 128, 192, 256, 320]}
+          sizes="41px"
+          width={332}
+          height={256}
           class="h-8 w-auto"
           loading="lazy"
           decoding="async"

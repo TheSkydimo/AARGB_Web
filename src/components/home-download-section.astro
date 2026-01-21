@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import { useTranslatedPath, useTranslations } from "~/i18n/utils";
 import type { Lang } from "~/i18n/ui";
 import { DOWNLOAD_TARGETS } from "~/config/downloads";
+import ResponsiveImage from "~/components/responsive-image.astro";
 
 type Props = {
   lang: Lang;
@@ -54,12 +55,14 @@ function isExternal(url: string) {
         return (
           <article class="download-card">
             <div class="flex items-start gap-4">
-              <img
+              <ResponsiveImage
                 src="/images/LOGO.webp"
                 alt="AARGB"
-                width="332"
-                height="256"
-                class="download-card__icon"
+                widths={[96, 128, 192, 256, 320]}
+                sizes="40px"
+                width={332}
+                height={256}
+                class="download-card__icon object-contain"
                 loading="lazy"
                 decoding="async"
               />

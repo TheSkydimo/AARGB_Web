@@ -1,10 +1,14 @@
 ---
+import ResponsiveImage from "~/components/responsive-image.astro";
+
 export type Props = {
   title: string;
   desc: string;
   items?: string[];
   imageSrc: string;
   imageAlt: string;
+  loading?: "lazy" | "eager";
+  fetchPriority?: "high" | "low" | "auto";
 };
 
 const {
@@ -13,16 +17,23 @@ const {
   items = [],
   imageSrc,
   imageAlt,
+  loading = "lazy",
+  fetchPriority = "auto",
 } = Astro.props satisfies Props;
 ---
 
 <article class="feature-card group">
   <div class="feature-figure">
-    <img
+    <ResponsiveImage
       src={imageSrc}
       alt={imageAlt}
-      loading="lazy"
+      widths={[300, 600]}
+      sizes="(min-width: 1024px) 400px, (min-width: 768px) 320px, 92vw"
+      width={600}
+      height={400}
+      loading={loading}
       decoding="async"
+      fetchpriority={fetchPriority}
       class="feature-figure__img"
     />
     <div class="feature-figure__overlay" aria-hidden="true"></div>

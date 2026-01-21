@@ -1,0 +1,71 @@
+---
+type FetchPriority = "high" | "low" | "auto";
+
+export type Props = {
+  src: string;
+  alt: string;
+  /**
+   * Responsive width ladder (in CSS px).
+   * Must match generated `public/images/<name>-<w>w.webp` files.
+   */
+  widths?: number[];
+  /**
+   * `sizes` attribute for responsive image selection.
+   */
+  sizes?: string;
+  width?: number | string;
+  height?: number | string;
+  class?: string;
+  loading?: "lazy" | "eager";
+  decoding?: "async" | "sync" | "auto";
+  fetchpriority?: FetchPriority;
+  [key: string]: any;
+};
+
+const {
+  src,
+  alt,
+  widths = [320, 480, 640, 800, 960, 1280, 1600, 1920],
+  sizes = "100vw",
+  width,
+  height,
+  class: className,
+  loading = "lazy",
+  decoding = "async",
+  fetchpriority = "auto",
+  ...rest
+} = Astro.props satisfies Props;
+
+function buildSrcSet(inputSrc: string, w: number[]) {
+  // Only auto-build for public images: /images/<name>.<ext>
+  // Generated files: /images/<name>-<w>w.webp
+  if (!inputSrc.startsWith("/images/")) return null;
+  if (/-\d+w\.webp$/i.test(inputSrc)) return null;
+
+  const match = inputSrc.match(/^\/images\/(.+)\.(?:webp|png|jpe?g)$/i);
+  if (!match) return null;
+
+  const baseName = match[1];
+  return w
+    .filter((x) => Number.isFinite(x) && x > 0)
+    .map((x) => encodeURI(`/images/${baseName}-${x}w.webp ${x}w`))
+    .join(", ");
+}
+
+const srcset = buildSrcSet(src, widths);
+---
+
+<img
+  {...rest}
+  src={encodeURI(src)}
+  srcset={srcset}
+  sizes={srcset ? sizes : undefined}
+  width={width}
+  height={height}
+  alt={alt}
+  class={className}
+  loading={loading}
+  decoding={decoding}
+  fetchpriority={fetchpriority}
+/>
+

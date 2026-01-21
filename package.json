@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write **/*.astro .",
-    "clean": "rimraf dist .astro node_modules"
+    "clean": "rimraf dist .astro node_modules",
+    "images:products": "node scripts/optimize-product-images.mjs"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.6.1",

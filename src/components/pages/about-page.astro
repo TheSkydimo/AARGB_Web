@@ -2,6 +2,7 @@
 import BaseLayout from "~/layouts/base-layout.astro";
 import { getLangFromUrl, useTranslations } from "~/i18n/utils";
 import { generateOrganizationSchema, generateWebPageSchema } from "~/utils/structured-data";
+import ResponsiveImage from "~/components/responsive-image.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -41,12 +42,16 @@ const webPageSchema = generateWebPageSchema(
           </div>
 
           <div class="border-default lg:border-l lg:border-t-0 border-t">
-            <img
+            <ResponsiveImage
               src="/images/about.webp"
               alt={t("about.heading")}
+              widths={[320, 640]}
+              sizes="(min-width: 1024px) 560px, 92vw"
+              width={640}
+              height={480}
+              class="h-56 w-full object-cover sm:h-64 lg:h-full lg:min-h-[360px]"
               loading="lazy"
               decoding="async"
-              class="h-56 w-full object-cover sm:h-64 lg:h-full lg:min-h-[360px]"
             />
           </div>
         </div>
