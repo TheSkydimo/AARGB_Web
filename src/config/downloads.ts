@@ -41,7 +41,7 @@ export const DOWNLOAD_TARGETS: DownloadTarget[] = [
       "home.download.cards.winClassic.b4",
     ],
     options: [
-      { labelKey: "home.download.menu.primary", url: "https://aargb.com/AARGBSetup.exe" },
+      { labelKey: "home.download.menu.primary", url: "https://cdn-dl.skydimo.com/aargb-setup/AARGBSetup.exe" },
     ],
   },
   {
