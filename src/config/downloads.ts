@@ -32,7 +32,7 @@ export const DOWNLOAD_TARGETS: DownloadTarget[] = [
   {
     id: "win-classic",
     titleKey: "home.download.cards.winClassic.title",
-    version: "v1.2.1.526",
+    version: "v0.1.1.230525",
     osNoteKey: "home.download.cards.winClassic.os",
     bulletsKeys: [
       "home.download.cards.winClassic.b1",
@@ -48,7 +48,7 @@ export const DOWNLOAD_TARGETS: DownloadTarget[] = [
     id: "win-recommended",
     titleKey: "home.download.cards.winRecommended.title",
     badgeKey: "home.download.cards.winRecommended.badge",
-    version: "v2.0.4.A5BCE593",
+    version: "v2.0.3.E362F15",
     osNoteKey: "home.download.cards.winRecommended.os",
     bulletsKeys: [
       "home.download.cards.winRecommended.b1",
@@ -58,7 +58,7 @@ export const DOWNLOAD_TARGETS: DownloadTarget[] = [
       "home.download.cards.winRecommended.b5",
     ],
     options: [
-      { labelKey: "home.download.menu.primary", url: "#" },
+      { labelKey: "home.download.menu.primary", url: "https://cdn-dl.skydimo.com/aargb-setup/AARGBSetup_2.0.3.e362f15.exe" },
     ],
     featured: true,
   },
