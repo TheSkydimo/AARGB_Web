@@ -48,7 +48,9 @@ function buildSrcSet(inputSrc: string, w: number[]) {
   const baseName = match[1];
   return w
     .filter((x) => Number.isFinite(x) && x > 0)
-    .map((x) => encodeURI(`/images/${baseName}-${x}w.webp ${x}w`))
+    // IMPORTANT: only encode the URL part. The space between URL and descriptor
+    // must remain a literal space per srcset syntax.
+    .map((x) => `${encodeURI(`/images/${baseName}-${x}w.webp`)} ${x}w`)
     .join(", ");
 }
 
